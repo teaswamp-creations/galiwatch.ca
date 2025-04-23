@@ -28,7 +28,7 @@ This is the first post in our deep-dive series on the data from our hummingbird 
 1. Data cleaning (this post)
 1. [Bird sizes](/posts/hummer-sizes-110523/)
 1. [Migration behaviour and weather effects](/posts/hummer-seasons-140823)
-1. [Territorial birds!](/posts/hummer-cooccurrence-210823)
+1. [Territorial rufous!](/posts/hummer-cooccurrence-210823)
 :::
 
 All the data analyzed here was collected in 2021. In the future, we may be able to learn more by comparing across different years. We have images from the hummingbird feeder, and micro-climate data collected from the weather station. 

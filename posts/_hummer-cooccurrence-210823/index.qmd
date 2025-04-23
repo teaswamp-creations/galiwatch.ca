@@ -40,6 +40,201 @@ This is the second post in this deep-dive series. See here for [part ii](https:/
 As previously covered in part i, we're looking at the hummingbird detection data from 2021. We did some preliminary data exploration, and saw some interesting patterns in the visit times of different birds.
 
 
+
+
+We will ignore outliers off the feeder, and try to estimate the relationship between bird position, species, and size. We'll "flatten" out the circular feeder and starting at the 12 o'clock position, index bird position as a proportion around the "clock"
+
+
+
+::: {layout-ncol=2} 
+
+![1. Points of bird sitting spots, unknown circle defining the feeder](clock_1.png)
+
+![2. Estimate circle of best fit](clock_2.png)
+:::
+
+
+To do this, we'll perform a least squares regression to estimate the circle of best fit, and project our bird positions onto this circle. Then we can do some interesting analysis in the linear space!
+
+::: {layout-ncol=2} 
+
+![3. Index along the circle shape](clock_3.png)
+
+![4. Flatten this out into a line](clock_4.png)
+:::
+
+I got ChatGPT to help with this part. 
+
+Importantly, the angle calculation is only valid for an axis-aligned ellipse. It is a lot more complicated to figure out when this isn't the case, as ours is. However, it's pretty close so I'm going to ignore that and just use the slightly wrong ellipse.
+
+```{r}
+# from https://stackoverflow.com/a/47881806
+# translated into R with ChatGPT
+
+# remove outliers to estimate ellipse
+noisy_ellipse <- bird_scaled %>%
+  filter(xmid >50, xmid < 700, ymid >250, ymid < 550) %>%
+  dplyr::select(c(xmid, ymid)) %>%
+  mutate(xmid = scale(xmid), ymid = scale(-ymid)) %>%
+  as.matrix()
+
+N <- nrow(noisy_ellipse)
+
+X <- noisy_ellipse[,1]
+Y <- noisy_ellipse[,2]
+
+A <- cbind(X^2, X*Y, Y^2, X, Y)
+b <- rep(1, N)
+fit <- lm(b ~ A - 1) # -1 to remove the intercept
+x <- coef(fit)
+
+# get last squares ellipse
+phi <- seq(0, 2*pi, length.out = 1000)
+c <- cbind(cos(phi), sin(phi))
+
+x_coord <- seq(-5, 5, length.out = 300)
+y_coord <- seq(-5, 5, length.out = 300)
+grid <- expand.grid(X = x_coord, Y = y_coord)
+Z_coord <- with(grid, x[1] * X^2 + x[2] * X * Y + x[3] * Y^2 + x[4] * X + x[5] * Y)
+
+# To overlay the least squares fitted ellipse on the residual plot,
+# we will generate contour data for the ellipse as before and overlay it.
+data_points <- data.frame(X, Y)
+# Assuming residuals are the differences between the observed noisy ellipse points and the fitted values
+# Calculate fitted values for each point in the noisy ellipse
+fitted_values <- with(data_points, x[1] * X^2 + x[2] * X * Y + x[3] * Y^2 + x[4] * X + x[5] * Y - 1)
+
+# Add residuals to the data frame
+data_points$Residuals <- fitted_values
+
+# Calculate Z values for the least squares ellipse using the entire grid
+fitted_ellipse <- data.frame(X = rep(x_coord, each = 300), Y = rep(y_coord, times = 300), Z = Z_coord)
+fitted_ellipse$Z <- with(fitted_ellipse, x[1] * X^2 + x[2] * X * Y + x[3] * Y^2 + x[4] * X + x[5] * Y)
+
+# Plot residuals with the least squares fitted ellipse on top
+ggplot() +
+  geom_point(data = data_points, aes(x = X, y = Y, color = Residuals), size = 1) +
+  scale_color_gradientn(colours =c('navy', 'lightyellow', 'darkred'),# midpoint = 0,
+                        limits = c(-1,1), oob=scales::squish) +
+  geom_contour(data = fitted_ellipse, aes(x = X, y = Y, z = Z), breaks = 1, color = "red", linewidth = 2) +
+  labs(title = "Ellipse Residuals with Least Squares Fitted Ellipse", x = "X", y = "Y") +
+  theme_pubr() + 
+  theme(legend.position = 'right')
+
+
+# get index with respect to ellipse for all datapoints
+center_x <- mean(bird_scaled$xmid)
+center_y <- mean(-bird_scaled$ymid)
+bird_scaled$Angle <- atan2(-bird_scaled$ymid - center_y, bird_scaled$xmid - center_x) - pi
+
+# Adjust angles to start at 12 o'clock
+bird_scaled$Angle <- ifelse(bird_scaled$Angle < -pi/2, bird_scaled$Angle + 2*pi, bird_scaled$Angle) 
+
+# Sort points by angle
+bird_scaled <- bird_scaled %>%
+  arrange(Angle) %>%
+  mutate(ellipse_index = (1:nrow(.)/nrow(.)) * 100) 
+
+bird_scaled %>%
+ggplot(aes(x = xmid, y = -ymid, colour = ellipse_index)) +
+  geom_point() +
+  scale_colour_viridis_c(option='mako') + 
+  theme_pubr() + 
+  theme(legend.position='right') + 
+  labs(colour = 'Ellipse index')
+```
+
+
+
+
+
+with line, look at 
+1. density of birds (by species, sex)
+1. height, width (by species, sex)
+1. confidence (by species, sex, box size)
+1. min/maxes as well as mids
+
+
+boxplot of confient + sex + species + position
+
+check 
+
+Birds are overall uniformly distribute.
+
+```{r}
+# birds are overall uniformly distributed
+bird_scaled %>%
+  ggplot(aes(x = ellipse_index)) +
+  geom_histogram(bins=20) + 
+  theme_pubr() + 
+  labs(x = 'Ellipse index', y = 'Number of observations')
+
+
+bird_scaled %>%
+  mutate(ellipse_index = ifelse(ellipse_index>50, 100-ellipse_index, ellipse_index)) %>%
+  ggplot(aes(x = ellipse_index, y = Area, colour=factor(Batch))) +
+  geom_point() + 
+  geom_smooth(method = 'lm') + 
+  stat_regline_equation() + 
+  facet_wrap(~Sex+ Species) +
+  theme_pubr() 
+```
+
+But this is not true once we break it down by sex and species! Probably that initial uniform distribution is dominated by the females/immature males.
+
+```{r}
+# but this is not true for sex an species breakdown
+# probably that initial uniform is dominated by the females/immature males
+bird_scaled %>%
+  ggplot(aes(x = ellipse_index, fill =Species)) +
+  geom_histogram() + 
+  facet_grid(Sex~Species, scales='free_y') + 
+  theme_pubr() + 
+  scale_fill_manual(values=c('chartreuse3', 'chocolate2'))
+
+bird_scaled %>%
+  #mutate(Batch = batch) %>%
+  ggplot(aes(x = ellipse_index, fill = Sex)) +
+  geom_density(alpha = 0.5) + 
+  #facet_grid(~Species) + 
+  theme_pubr() 
+
+# check for seasonality
+bird_scaled %>%
+  #mutate(Batch = batch) %>%
+  ggplot(aes(x = ellipse_index, fill =factor(Batch))) +
+  geom_histogram(bins = 300) + 
+  theme_pubr() 
+
+# confidence is similarly disrtibuted across index
+bird_scaled %>%
+  #mutate(Batch = batch) %>%
+  ggplot(aes(x = ellipse_index, y = confidence)) +
+  geom_point() +
+  theme_pubr()
+  
+# highest confidence in profile view
+bird_scaled %>%
+  mutate(confidence_lvl = cut(confidence, c(0.7, 0.9, 0.98, 1), ordered_result=T)) %>%
+  ggplot(aes(x = ellipse_index, fill = confidence_lvl)) +
+  geom_histogram(position='fill') + 
+  #facet_wrap(~confidence_lvl) +
+  theme_pubr()
+
+# Height depends a lot on index, width not so much
+# aspect ratio not so much either
+bird_scaled %>%
+  mutate(confidence_lvl = cut(confidence, c(0.7, 0.9, 0.98, 1), ordered_result=T)) %>%
+  ggplot(aes(x = ellipse_index, y = Height, fill = Sex)) +
+  geom_point() + 
+  #facet_wrap(~Species) +
+  geom_smooth() + 
+  theme_pubr()
+
+```
+
+
+
 ## Continuation of hummer-watch data analysis!
 
 ## Number of birds in an image for each class
