@@ -117,7 +117,6 @@ gtag('config', 'G-YZBNVRR4EQ', { 'anonymize_ip': true});
 
 <link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
-<meta name="quarto:status" content="draft">
 
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
@@ -126,7 +125,7 @@ gtag('config', 'G-YZBNVRR4EQ', { 'anonymize_ip': true});
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -185,8 +184,7 @@ gtag('config', 'G-YZBNVRR4EQ', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a>
-  <ul class="collapse">
+  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a></li>
   <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
   <li><a href="#number-of-birds-by-species" id="toc-number-of-birds-by-species" class="nav-link" data-scroll-target="#number-of-birds-by-species">Number of birds by species</a></li>
   <li><a href="#classifier-confidence" id="toc-classifier-confidence" class="nav-link" data-scroll-target="#classifier-confidence">Classifier confidence</a></li>
@@ -194,7 +192,6 @@ gtag('config', 'G-YZBNVRR4EQ', { 'anonymize_ip': true});
   <li><a href="#batch-correction-and-normalization" id="toc-batch-correction-and-normalization" class="nav-link" data-scroll-target="#batch-correction-and-normalization">Batch correction and normalization</a></li>
   <li><a href="#number-of-ids-after-filtering" id="toc-number-of-ids-after-filtering" class="nav-link" data-scroll-target="#number-of-ids-after-filtering">Number of ID’s after filtering</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
@@ -304,8 +301,9 @@ Series overview
 <img src="water_level.gif" class="img-fluid" width="400">
 </center>
 <p><br></p>
-<section id="setup" class="level2">
-<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+</section>
+<section id="setup" class="level1">
+<h1>Setup</h1>
 <p>Lets dive in to some of the data we’ve collected!</p>
 <p>We’ll read in and prepare our data: the classifier output as well as bounding boxes of detected birds.</p>
 <div class="cell">
@@ -535,8 +533,8 @@ Series overview
 </div>
 </div>
 </section>
-<section id="number-of-birds-by-species" class="level2">
-<h2 class="anchored" data-anchor-id="number-of-birds-by-species">Number of birds by species</h2>
+<section id="number-of-birds-by-species" class="level1">
+<h1>Number of birds by species</h1>
 <p>Our bird detector ID’d lots of visitors! Each ID represents a bird captured in an image, and <strong>not necessarily an individual</strong>. The images are captured once every minute, so if for example a single bird sat at the feeder for two minutes in a row, it would get counted twice. There may be multiple birds in a single image.</p>
 <div class="cell">
 <details class="code-fold">
@@ -599,8 +597,8 @@ Series overview
 </div>
 </div>
 </section>
-<section id="classifier-confidence" class="level2">
-<h2 class="anchored" data-anchor-id="classifier-confidence">Classifier confidence</h2>
+<section id="classifier-confidence" class="level1">
+<h1>Classifier confidence</h1>
 <p>Each bird ID is made by picking the the most likely label, based on the prediction probability. Sometimes, the classifier isn’t as confident as others. For example, it may be harder to identify a bird that is facing away from the camera. We can plot the confidences, and see which birds are the hardest to label.</p>
 <div class="cell">
 <details class="code-fold">
@@ -639,8 +637,8 @@ Series overview
 </div>
 </div>
 </section>
-<section id="filtering-for-high-confidence-ids" class="level2">
-<h2 class="anchored" data-anchor-id="filtering-for-high-confidence-ids">Filtering for high-confidence IDs</h2>
+<section id="filtering-for-high-confidence-ids" class="level1">
+<h1>Filtering for high-confidence IDs</h1>
 <p>We manually looked at the images, and found that that almost all the Rufouses after September 1st are false positives, so we’ll remove these observations. Also, since we have few IDs in October compared to other months, we will drop this month from our data. Then, we’ll filter to only retain the high-confidence (&gt; 0.7 prediction probability) bird IDs</p>
 <div class="cell">
 <details class="code-fold">
@@ -719,8 +717,8 @@ Series overview
 <p>This distribution more or less makes sense, we see some very small bounding boxes which may be mis-calls or birds who are only half in the image. There are also some cases where a bird is partially obscured because it’s sitting behind the feeder. There are some very large bounding boxes also. I’m not sure exactly whether these are real, giant humming birds, or some kind of error.</p>
 <p>Lets see if looking at the bird position with respect to the feeder helps sort this out.</p>
 </section>
-<section id="batch-correction-and-normalization" class="level2">
-<h2 class="anchored" data-anchor-id="batch-correction-and-normalization">Batch correction and normalization</h2>
+<section id="batch-correction-and-normalization" class="level1">
+<h1>Batch correction and normalization</h1>
 <p>We can plot the location of where each bird sits, with the proxy that a birds will be located at the center of its bounding box (indicated by xmid and ymid). The birds appear to mostly sit in a circle, around the rim of the feeder. This gives the best access to the sugar water.</p>
 <div class="cell">
 <details class="code-fold">
@@ -948,8 +946,8 @@ Series overview
 </div>
 </div>
 </section>
-<section id="number-of-ids-after-filtering" class="level2">
-<h2 class="anchored" data-anchor-id="number-of-ids-after-filtering">Number of ID’s after filtering</h2>
+<section id="number-of-ids-after-filtering" class="level1">
+<h1>Number of ID’s after filtering</h1>
 <p>After all this filtering, here’s the final numbers of each class label:</p>
 <div class="cell">
 <details class="code-fold">
@@ -1021,8 +1019,8 @@ Series overview
 </div>
 </div>
 </section>
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<section id="summary" class="level1">
+<h1>Summary</h1>
 <p>We’ve filtered out low-confidence ID’s and suspicious aspect-ratio bounding boxes. Each row in our dataframe corresponds to a picture of a bird, not necessarily an individual. Female and immature males are not possible to distinguish, they are both classified as females. There are more birds labeled as female than male for both Anna and Rufous. There are more Rufous than Anna. Bounding boxes tend to be short and wide more often than tall and thin.</p>
 <p>We’ll save the prepared <code>bird_scaled</code> dataframe for future use.</p>
 <div class="cell">
@@ -1046,7 +1044,6 @@ Read on to <a href="https://galiwatch.ca/posts/hummer-sizes-110523">Part 2 <i cl
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
