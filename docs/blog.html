@@ -81,7 +81,8 @@ ul.task-list li input[type="checkbox"] {
 
     const options = {
       valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
+      page: 25,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
       searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
@@ -201,7 +202,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(22)</span></div><div class="category" data-category="YW5hbHlzaXM=">analysis <span class="quarto-category-count">(3)</span></div><div class="category" data-category="YXVkaW8lMjBtb3Ro">audio moth <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YmVlJTIwY291bnQ=">bee count <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YmVlcw==">bees <span class="quarto-category-count">(6)</span></div><div class="category" data-category="YmlyZCUyMHNvbmc=">bird song <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y2hpdCUyMGNoYXQ=">chit chat <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Y2xpbWF0ZQ==">climate <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Y29kZQ==">code <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Y29uc2VydmF0aW9u">conservation <span class="quarto-category-count">(3)</span></div><div class="category" data-category="ZGF0YSUyMGFuYWx5c2lz">data analysis <span class="quarto-category-count">(8)</span></div><div class="category" data-category="ZGVlcC1kaXZl">deep-dive <span class="quarto-category-count">(3)</span></div><div class="category" data-category="ZnJvZ3M=">frogs <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aGFyZHdhcmU=">hardware <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aHVtbWluZ2JpcmRz">hummingbirds <span class="quarto-category-count">(5)</span></div><div class="category" data-category="bmV3cw==">news <span class="quarto-category-count">(11)</span></div><div class="category" data-category="cGhlbm9sb2d5">phenology <span class="quarto-category-count">(2)</span></div><div class="category" data-category="cGlsb3QlMjBwcm9qZWN0">pilot project <span class="quarto-category-count">(2)</span></div><div class="category" data-category="c3VydmVpbGxhbmNl">surveillance <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dGF4b25vbXk=">taxonomy <span class="quarto-category-count">(1)</span></div><div class="category" data-category="d2VhdGhlcg==">weather <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(26)</span></div><div class="category" data-category="QmVlTnVrZXIzMDAw">BeeNuker3000 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YW5hbHlzaXM=">analysis <span class="quarto-category-count">(3)</span></div><div class="category" data-category="YXVkaW8lMjBtb3Ro">audio moth <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YmVlJTIwY291bnQ=">bee count <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YmVlcw==">bees <span class="quarto-category-count">(9)</span></div><div class="category" data-category="YmlyZCUyMHNvbmc=">bird song <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YnVtYmxlYmVlcw==">bumblebees <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y2hpdCUyMGNoYXQ=">chit chat <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Y2xpbWF0ZQ==">climate <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Y29kZQ==">code <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Y29uc2VydmF0aW9u">conservation <span class="quarto-category-count">(5)</span></div><div class="category" data-category="ZGF0YSUyMGFuYWx5c2lz">data analysis <span class="quarto-category-count">(8)</span></div><div class="category" data-category="ZGF0YWJhc2U=">database <span class="quarto-category-count">(3)</span></div><div class="category" data-category="ZGVlcC1kaXZl">deep-dive <span class="quarto-category-count">(3)</span></div><div class="category" data-category="ZmVhdHVyZSUyMGJlZQ==">feature bee <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZnJvZ3M=">frogs <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aGFyZHdhcmU=">hardware <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aHVtbWluZ2JpcmRz">hummingbirds <span class="quarto-category-count">(5)</span></div><div class="category" data-category="bmV3cw==">news <span class="quarto-category-count">(15)</span></div><div class="category" data-category="cGhlbm9sb2d5">phenology <span class="quarto-category-count">(3)</span></div><div class="category" data-category="cGlsb3QlMjBwcm9qZWN0">pilot project <span class="quarto-category-count">(2)</span></div><div class="category" data-category="cGxhbnQlMjBhc3NvY2lhdGlvbnM=">plant associations <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c3VydmVpbGxhbmNl">surveillance <span class="quarto-category-count">(2)</span></div><div class="category" data-category="dGF4b25vbXk=">taxonomy <span class="quarto-category-count">(1)</span></div><div class="category" data-category="d2VhdGhlcg==">weather <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
 
@@ -230,7 +231,139 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="YmVlcyUyQ2NvbnNlcnZhdGlvbiUyQ3RheG9ub215" data-listing-date-sort="1707454800000" data-listing-file-modified-sort="1719365936181" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2274">
+<div class="quarto-post image-right" data-index="0" data-categories="ZmVhdHVyZSUyMGJlZSUyQ2J1bWJsZWJlZXMlMkNwbGFudCUyMGFzc29jaWF0aW9ucyUyQ25ld3M=" data-listing-date-sort="1726632000000" data-listing-file-modified-sort="1745444627162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="818">
+<div class="thumbnail">
+<p><a href="./posts/feature-bee-bflavidus-180924/index.html" class="no-external"></a></p><a href="./posts/feature-bee-bflavidus-180924/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/feature-bee-bflavidus-180924/thumbnail.jpeg" class="thumbnail-image"></p>
+</a><p><a href="./posts/feature-bee-bflavidus-180924/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/feature-bee-bflavidus-180924/index.html" class="no-external">Feature Bee - Bombus flavidus</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/feature-bee-bflavidus-180924/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('ZmVhdHVyZSUyMGJlZQ=='); return false;">
+feature bee
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('YnVtYmxlYmVlcw=='); return false;">
+bumblebees
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('cGxhbnQlMjBhc3NvY2lhdGlvbnM='); return false;">
+plant associations
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
+news
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/feature-bee-bflavidus-180924/index.html" class="no-external">Reading time: 4 minutes</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/feature-bee-bflavidus-180924/index.html" class="no-external">
+<div class="listing-date">
+Sep 18, 2024
+</div>
+<div class="listing-author">
+Kath Quayle
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="bmV3cyUyQ2RhdGFiYXNlJTJDYmVlcyUyQ2NvbnNlcnZhdGlvbg==" data-listing-date-sort="1726200000000" data-listing-file-modified-sort="1745444627162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="222">
+<div class="thumbnail">
+<p><a href="./posts/bee-book-240913/index.html" class="no-external"></a></p><a href="./posts/bee-book-240913/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/bee-book-240913/thumbnail.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/bee-book-240913/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/bee-book-240913/index.html" class="no-external">Big book of bees V2 release</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/bee-book-240913/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
+news
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YWJhc2U='); return false;">
+database
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('YmVlcw=='); return false;">
+bees
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Y29uc2VydmF0aW9u'); return false;">
+conservation
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/bee-book-240913/index.html" class="no-external">Reading time: &lt;1 minute</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/bee-book-240913/index.html" class="no-external">
+<div class="listing-date">
+Sep 13, 2024
+</div>
+<div class="listing-author">
+chatGPT 4o (reviewed &amp; edited by Cait Harrigan and Kath Quayle)
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="bmV3cyUyQ0JlZU51a2VyMzAwMCUyQ2JlZXMlMkNkYXRhYmFzZSUyQ3BoZW5vbG9neSUyQ3N1cnZlaWxsYW5jZQ==" data-listing-date-sort="1721620800000" data-listing-file-modified-sort="1745444627162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1316">
+<div class="thumbnail">
+<p><a href="./posts/bee-plant-database-250624/index.html" class="no-external"></a></p><a href="./posts/bee-plant-database-250624/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/bee-plant-database-250624/thumbnail.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/bee-plant-database-250624/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/bee-plant-database-250624/index.html" class="no-external">BC Bee-Plant Database</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/bee-plant-database-250624/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
+news
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('QmVlTnVrZXIzMDAw'); return false;">
+BeeNuker3000
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('YmVlcw=='); return false;">
+bees
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YWJhc2U='); return false;">
+database
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('cGhlbm9sb2d5'); return false;">
+phenology
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('c3VydmVpbGxhbmNl'); return false;">
+surveillance
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/bee-plant-database-250624/index.html" class="no-external">Reading time: 5 minutes</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/bee-plant-database-250624/index.html" class="no-external">
+<div class="listing-date">
+Jul 22, 2024
+</div>
+<div class="listing-author">
+Kath Quayle
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="YmVlcyUyQ2NvbnNlcnZhdGlvbiUyQ3RheG9ub215" data-listing-date-sort="1707454800000" data-listing-file-modified-sort="1745444627214" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2274">
 <div class="thumbnail">
 <p><a href="./posts/taxonomy-050224/index.html" class="no-external"></a></p><a href="./posts/taxonomy-050224/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/taxonomy-050224/thumbnail.jpg" class="thumbnail-image"></p>
@@ -269,7 +402,7 @@ Richard Harrigan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="bmV3cyUyQ2FuYWx5c2lzJTJDd2VhdGhlciUyQ2JlZSUyMGNvdW50JTJDcGhlbm9sb2d5JTJDc3VydmVpbGxhbmNl" data-listing-date-sort="1706677200000" data-listing-file-modified-sort="1719365935915" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2447">
+<div class="quarto-post image-right" data-index="4" data-categories="bmV3cyUyQ2FuYWx5c2lzJTJDd2VhdGhlciUyQ2JlZSUyMGNvdW50JTJDcGhlbm9sb2d5JTJDc3VydmVpbGxhbmNl" data-listing-date-sort="1706677200000" data-listing-file-modified-sort="1745444627209" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2447">
 <div class="thumbnail">
 <p><a href="./posts/oregon-grape-beecount-2023-310124/index.html" class="no-external"></a></p><a href="./posts/oregon-grape-beecount-2023-310124/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/oregon-grape-beecount-2023-310124/thumbnail.jpg" class="thumbnail-image"></p>
@@ -317,7 +450,7 @@ Kath Quayle
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="aHVtbWluZ2JpcmRz" data-listing-date-sort="1704171600000" data-listing-file-modified-sort="1719365935773" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="891">
+<div class="quarto-post image-right" data-index="5" data-categories="aHVtbWluZ2JpcmRz" data-listing-date-sort="1704171600000" data-listing-file-modified-sort="1745444627193" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="891">
 <div class="thumbnail">
 <p><a href="./posts/hummer-watch-020124/index.html" class="no-external"></a></p><a href="./posts/hummer-watch-020124/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/hummer-watch-020124/thumbnail.jpg" class="thumbnail-image"></p>
@@ -350,7 +483,49 @@ Richard Harrigan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="bmV3cyUyQ2FuYWx5c2lzJTJDYmVlcw==" data-listing-date-sort="1697342400000" data-listing-file-modified-sort="1719365935632" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="990">
+<div class="quarto-post image-right" data-index="6" data-categories="bmV3cyUyQ2RhdGFiYXNlJTJDYmVlcyUyQ2NvbnNlcnZhdGlvbg==" data-listing-date-sort="1703307600000" data-listing-file-modified-sort="1745444627162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="247">
+<div class="thumbnail">
+<p><a href="./posts/bee-book-231223/index.html" class="no-external"></a></p><a href="./posts/bee-book-231223/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/bee-book-231223/thumbnail.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/bee-book-231223/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/bee-book-231223/index.html" class="no-external">Big book of bees!</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/bee-book-231223/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">
+news
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YWJhc2U='); return false;">
+database
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('YmVlcw=='); return false;">
+bees
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Y29uc2VydmF0aW9u'); return false;">
+conservation
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/bee-book-231223/index.html" class="no-external">Reading time: &lt;1 minute</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/bee-book-231223/index.html" class="no-external">
+<div class="listing-date">
+Dec 23, 2023
+</div>
+<div class="listing-author">
+claude.ai (reviewed &amp; edited by Cait Harrigan)
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="7" data-categories="bmV3cyUyQ2FuYWx5c2lzJTJDYmVlcw==" data-listing-date-sort="1697342400000" data-listing-file-modified-sort="1745444627162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="990">
 <div class="thumbnail">
 <p><a href="./posts/bombus-vosnesenskii-151023/index.html" class="no-external"></a></p><a href="./posts/bombus-vosnesenskii-151023/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/bombus-vosnesenskii-151023/thumbnail.jpg" class="thumbnail-image"></p>
@@ -389,7 +564,7 @@ Kath Quayle
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="YmVlcw==" data-listing-date-sort="1691899200000" data-listing-file-modified-sort="1719365935883" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="246">
+<div class="quarto-post image-right" data-index="8" data-categories="YmVlcw==" data-listing-date-sort="1691899200000" data-listing-file-modified-sort="1745444627203" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="246">
 <div class="thumbnail">
 <p><a href="./posts/meet-the-bees-130823/index.html" class="no-external"></a></p><a href="./posts/meet-the-bees-130823/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/meet-the-bees-130823/thumbnail.png" class="thumbnail-image"></p>
@@ -422,7 +597,7 @@ Cait Harrigan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="aHVtbWluZ2JpcmRzJTJDY29kZSUyQ2RhdGElMjBhbmFseXNpcyUyQ2RlZXAtZGl2ZQ==" data-listing-date-sort="1683777600000" data-listing-file-modified-sort="1745443030882" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1739">
+<div class="quarto-post image-right" data-index="9" data-categories="aHVtbWluZ2JpcmRzJTJDY29kZSUyQ2RhdGElMjBhbmFseXNpcyUyQ2RlZXAtZGl2ZQ==" data-listing-date-sort="1683777600000" data-listing-file-modified-sort="1745444627193" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1770">
 <div class="thumbnail">
 <p><a href="./posts/hummer-sizes-110523/index.html" class="no-external"></a></p><a href="./posts/hummer-sizes-110523/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/hummer-sizes-110523/thumbnail.png" class="thumbnail-image"></p>
@@ -450,7 +625,7 @@ deep-dive
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/hummer-sizes-110523/index.html" class="no-external">Reading time: 6 minutes</a>
+<a href="./posts/hummer-sizes-110523/index.html" class="no-external"></a>
 </div>
 </div>
 <div class="metadata">
@@ -464,7 +639,7 @@ Cait Harrigan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="bmV3cyUyQ2F1ZGlvJTIwbW90aCUyQ2FuYWx5c2lzJTJDYmlyZCUyMHNvbmc=" data-listing-date-sort="1682136000000" data-listing-file-modified-sort="1719365935570" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="170">
+<div class="quarto-post image-right" data-index="10" data-categories="bmV3cyUyQ2F1ZGlvJTIwbW90aCUyQ2FuYWx5c2lzJTJDYmlyZCUyMHNvbmc=" data-listing-date-sort="1682136000000" data-listing-file-modified-sort="1745444627162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="170">
 <div class="thumbnail">
 <p><a href="./posts/bird-song-220423/index.html" class="no-external"></a></p><a href="./posts/bird-song-220423/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/bird-song-220423/thumbnail.jpeg" class="thumbnail-image"></p>
@@ -506,7 +681,7 @@ Kath Quayle
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="bmV3cyUyQ2NoaXQlMjBjaGF0JTJDaHVtbWluZ2JpcmRz" data-listing-date-sort="1680148800000" data-listing-file-modified-sort="1719365935852" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="96">
+<div class="quarto-post image-right" data-index="11" data-categories="bmV3cyUyQ2NoaXQlMjBjaGF0JTJDaHVtbWluZ2JpcmRz" data-listing-date-sort="1680148800000" data-listing-file-modified-sort="1745444627198" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="96">
 <div class="thumbnail">
 <p><a href="./posts/hummer-watch-300323/index.html" class="no-external"></a></p><a href="./posts/hummer-watch-300323/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/hummer-watch-300323/thumbnail.png" class="thumbnail-image"></p>
@@ -545,7 +720,7 @@ Kath Quayle
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="bmV3cyUyQ2NoaXQlMjBjaGF0JTJDaHVtbWluZ2JpcmRz" data-listing-date-sort="1679284800000" data-listing-file-modified-sort="1719365935852" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="147">
+<div class="quarto-post image-right" data-index="12" data-categories="bmV3cyUyQ2NoaXQlMjBjaGF0JTJDaHVtbWluZ2JpcmRz" data-listing-date-sort="1679284800000" data-listing-file-modified-sort="1745444627198" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="147">
 <div class="thumbnail">
 <p><a href="./posts/hummer-watch-200323/index.html" class="no-external"></a></p><a href="./posts/hummer-watch-200323/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/hummer-watch-200323/thumbnail.png" class="thumbnail-image"></p>
@@ -584,7 +759,7 @@ Kath Quayle
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="aHVtbWluZ2JpcmRzJTJDY29kZSUyQ2RhdGElMjBhbmFseXNpcyUyQ2RlZXAtZGl2ZQ==" data-listing-date-sort="1679025600000" data-listing-file-modified-sort="1719367867018" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2369">
+<div class="quarto-post image-right" data-index="13" data-categories="aHVtbWluZ2JpcmRzJTJDY29kZSUyQ2RhdGElMjBhbmFseXNpcyUyQ2RlZXAtZGl2ZQ==" data-listing-date-sort="1679025600000" data-listing-file-modified-sort="1745444627187" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2369">
 <div class="thumbnail">
 <p><a href="./posts/hummer-data-cleaning-170323/index.html" class="no-external"></a></p><a href="./posts/hummer-data-cleaning-170323/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/hummer-data-cleaning-170323/thumbnail.png" class="thumbnail-image"></p>
@@ -612,7 +787,7 @@ deep-dive
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/hummer-data-cleaning-170323/index.html" class="no-external">Reading time: 8 minutes</a>
+<a href="./posts/hummer-data-cleaning-170323/index.html" class="no-external"></a>
 </div>
 </div>
 <div class="metadata">
@@ -626,7 +801,7 @@ Cait Harrigan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-categories="bmV3cyUyQ2NoaXQlMjBjaGF0" data-listing-date-sort="1679025600000" data-listing-file-modified-sort="1719365936181" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="264">
+<div class="quarto-post image-right" data-index="14" data-categories="bmV3cyUyQ2NoaXQlMjBjaGF0" data-listing-date-sort="1679025600000" data-listing-file-modified-sort="1745444627209" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="264">
 <div class="thumbnail">
 <p><a href="./posts/recap-170323/index.html" class="no-external"></a></p><a href="./posts/recap-170323/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/recap-170323/thumbnail.jpg" class="thumbnail-image"></p>
@@ -662,7 +837,7 @@ Kath Quayle
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="11" data-categories="bmV3cyUyQ2hhcmR3YXJl" data-listing-date-sort="1678680000000" data-listing-file-modified-sort="1719365935883" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="507">
+<div class="quarto-post image-right" data-index="15" data-categories="bmV3cyUyQ2hhcmR3YXJl" data-listing-date-sort="1678680000000" data-listing-file-modified-sort="1745444627209" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="507">
 <div class="thumbnail">
 <p><a href="./posts/operations-update-130323/index.html" class="no-external"></a></p><a href="./posts/operations-update-130323/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/operations-update-130323/thumbnail.jpg" class="thumbnail-image"></p>
@@ -698,7 +873,7 @@ Kath Quayle
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="12" data-categories="YmVlcyUyQ2NsaW1hdGUlMkNwaGVub2xvZ3klMkNkYXRhJTIwYW5hbHlzaXM=" data-listing-date-sort="1678680000000" data-listing-file-modified-sort="1719365936024" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="250">
+<div class="quarto-post image-right" data-index="16" data-categories="YmVlcyUyQ2NsaW1hdGUlMkNwaGVub2xvZ3klMkNkYXRhJTIwYW5hbHlzaXM=" data-listing-date-sort="1678680000000" data-listing-file-modified-sort="1745444627209" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="250">
 <div class="thumbnail">
 <p><a href="./posts/oregon-grape-seasons-130323/index.html" class="no-external"></a></p><a href="./posts/oregon-grape-seasons-130323/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/oregon-grape-seasons-130323/thumbnail.jpg" class="thumbnail-image"></p>
@@ -740,7 +915,7 @@ Kath Quayle
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="13" data-categories="Y2xpbWF0ZSUyQ2NvZGUlMkNkYXRhJTIwYW5hbHlzaXM=" data-listing-date-sort="1677042000000" data-listing-file-modified-sort="1719365935632" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="711">
+<div class="quarto-post image-right" data-index="17" data-categories="Y2xpbWF0ZSUyQ2NvZGUlMkNkYXRhJTIwYW5hbHlzaXM=" data-listing-date-sort="1677042000000" data-listing-file-modified-sort="1745444627167" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="711">
 <div class="thumbnail">
 <p><a href="./posts/fires-220223/index.html" class="no-external"></a></p><a href="./posts/fires-220223/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/fires-220223/thumbnail.jpg" class="thumbnail-image"></p>
@@ -779,7 +954,7 @@ Cait Harrigan, Richard Harrigan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="14" data-categories="bmV3cyUyQ2Zyb2dz" data-listing-date-sort="1666411200000" data-listing-file-modified-sort="1719365935695" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="196">
+<div class="quarto-post image-right" data-index="18" data-categories="bmV3cyUyQ2Zyb2dz" data-listing-date-sort="1666411200000" data-listing-file-modified-sort="1745444627167" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="196">
 <div class="thumbnail">
 <p><a href="./posts/frog-watch-221022/index.html" class="no-external"></a></p><a href="./posts/frog-watch-221022/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/frog-watch-221022/thumbnail.jpg" class="thumbnail-image"></p>
@@ -815,7 +990,7 @@ Kath Quayle
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="15" data-categories="Y2xpbWF0ZSUyQ2RhdGElMjBhbmFseXNpcw==" data-listing-date-sort="1665547200000" data-listing-file-modified-sort="1719365935868" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="662">
+<div class="quarto-post image-right" data-index="19" data-categories="Y2xpbWF0ZSUyQ2RhdGElMjBhbmFseXNpcw==" data-listing-date-sort="1665547200000" data-listing-file-modified-sort="1745444627203" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="662">
 <div class="thumbnail">
 <p><a href="./posts/indoor-air-replacement-121022/index.html" class="no-external"></a></p><a href="./posts/indoor-air-replacement-121022/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/indoor-air-replacement-121022/Picture3.png" class="thumbnail-image"></p>
@@ -851,7 +1026,7 @@ Richard Harrigan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="16" data-categories="bmV3cyUyQ2NvZGUlMkNkYXRhJTIwYW5hbHlzaXMlMkNiZWVz" data-listing-date-sort="1659585600000" data-listing-file-modified-sort="1719365935492" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="260">
+<div class="quarto-post image-right" data-index="20" data-categories="bmV3cyUyQ2NvZGUlMkNkYXRhJTIwYW5hbHlzaXMlMkNiZWVz" data-listing-date-sort="1659585600000" data-listing-file-modified-sort="1745444627162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="260">
 <div class="thumbnail">
 <p><a href="./posts/bee-watch-040822/index.html" class="no-external"></a></p><a href="./posts/bee-watch-040822/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/bee-watch-040822/images/Raspberrypi camera 2.jpg" class="thumbnail-image"></p>
@@ -893,7 +1068,7 @@ Kath Quayle
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="17" data-categories="YmVlcyUyQ2NvbnNlcnZhdGlvbiUyQ2RlZXAtZGl2ZQ==" data-listing-date-sort="1658203200000" data-listing-file-modified-sort="1719365935420" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="772">
+<div class="quarto-post image-right" data-index="21" data-categories="YmVlcyUyQ2NvbnNlcnZhdGlvbiUyQ2RlZXAtZGl2ZQ==" data-listing-date-sort="1658203200000" data-listing-file-modified-sort="1745444627162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="772">
 <div class="thumbnail">
 <p><a href="./posts/bee-loss-190722/index.html" class="no-external"></a></p><a href="./posts/bee-loss-190722/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/bee-loss-190722/thumbnail.jpg" class="thumbnail-image"></p>
@@ -932,7 +1107,7 @@ Kath Quayle
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="18" data-categories="bmV3cw==" data-listing-date-sort="1651377600000" data-listing-file-modified-sort="1719365936024" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="295">
+<div class="quarto-post image-right" data-index="22" data-categories="bmV3cw==" data-listing-date-sort="1651377600000" data-listing-file-modified-sort="1745444627209" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="295">
 <div class="thumbnail">
 <p><a href="./posts/recap-010522/index.html" class="no-external"></a></p><a href="./posts/recap-010522/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/recap-010522/thumbnail.jpg" class="thumbnail-image"></p>
@@ -965,7 +1140,7 @@ Cait Harrigan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="19" data-categories="bmV3cyUyQ2NsaW1hdGU=" data-listing-date-sort="1639890000000" data-listing-file-modified-sort="1719365936024" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="98">
+<div class="quarto-post image-right" data-index="23" data-categories="bmV3cyUyQ2NsaW1hdGU=" data-listing-date-sort="1639890000000" data-listing-file-modified-sort="1745445144125" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="98">
 <div class="thumbnail">
 <p><a href="./posts/purple-air-191221/index.html" class="no-external"></a></p><a href="./posts/purple-air-191221/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/purple-air-191221/thumbnail.jpg" class="thumbnail-image"></p>
@@ -1001,7 +1176,7 @@ Cait Harrigan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="20" data-categories="Y2xpbWF0ZSUyQ3BpbG90JTIwcHJvamVjdCUyQ2RhdGElMjBhbmFseXNpcw==" data-listing-date-sort="1623816000000" data-listing-file-modified-sort="1719365936193" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2217">
+<div class="quarto-post image-right" data-index="24" data-categories="Y2xpbWF0ZSUyQ3BpbG90JTIwcHJvamVjdCUyQ2RhdGElMjBhbmFseXNpcw==" data-listing-date-sort="1623816000000" data-listing-file-modified-sort="1745444627214" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2217">
 <div class="thumbnail">
 <p><a href="./posts/weather-story-160621/index.html" class="no-external"></a></p><a href="./posts/weather-story-160621/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/weather-story-160621/thumbnail.jpg" class="thumbnail-image"></p>
@@ -1040,10 +1215,10 @@ Kath Quayle
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="21" data-categories="Y29uc2VydmF0aW9uJTJDcGlsb3QlMjBwcm9qZWN0JTJDZGF0YSUyMGFuYWx5c2lz" data-listing-date-sort="1622433600000" data-listing-file-modified-sort="1719365935915" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2101">
+<div class="quarto-post image-right" data-index="25" data-categories="Y29uc2VydmF0aW9uJTJDcGlsb3QlMjBwcm9qZWN0JTJDZGF0YSUyMGFuYWx5c2lz" data-listing-date-sort="1622433600000" data-listing-file-modified-sort="1745444627209" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2101">
 <div class="thumbnail">
 <p><a href="./posts/oregon-grape-phenology-310521/index.html" class="no-external"></a></p><a href="./posts/oregon-grape-phenology-310521/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/oregon-grape-phenology-310521/thumbnail.jpg" class="thumbnail-image"></p>
+<p><img loading="lazy" data-src="./posts/oregon-grape-phenology-310521/thumbnail.jpg" class="thumbnail-image"></p>
 </a><p><a href="./posts/oregon-grape-phenology-310521/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -1083,6 +1258,9 @@ Kath Quayle
 <div class="listing-no-matching d-none">
 No matching items
 </div>
+<nav id="listing-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
 </div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
