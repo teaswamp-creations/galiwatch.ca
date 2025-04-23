@@ -1,0 +1,42 @@
+---
+title: Big book of bees V2 release
+date: 2024-09-13
+author: chatGPT 4o (reviewed & edited by Cait Harrigan and Kath Quayle)
+engine: knitr
+image: thumbnail.png
+categories:
+  - news
+  - database
+  - bees
+  - conservation
+---
+
+Reading time: `r ifelse(file.size("index.qmd")/2000 <= 1.5, '<1 minute', paste0(round(file.size("index.qmd")/2000), ' minutes'))`
+
+
+
+## Galiwatch Bee Book: Second Edition Now Available!
+
+We're pleased to announce the release of the second edition of the Galiwatch Bee Book! Brought to you by your favourite Tea Swamp members, this update marks a significant expansion of our digital resource for bee enthusiasts in British Columbia's Pacific Maritime ecozone.
+
+What's new in this edition?
+
+1. Expanded Species Coverage: We've added 67 new bee species to our database, incorporating recent discoveries from newly published literature and field observations.
+
+2. Citizen Science Integration: a number of new records come directly from BC Native Bee Society Bee Atlas members, showcasing the power of community-driven research.
+
+3. Enhanced Data Quality: We've meticulously reviewed and refined our existing records. This process involved:
+   - Removing misidentified specimens
+   - Eliminating species unlikely to inhabit the Pacific Maritime region
+   - Excluding entries lacking solid literature support
+   - Updating nomenclature to reflect the latest taxonomic revisions
+
+4. Conservation Insights: With our expanded dataset, researchers and conservationists can gain deeper insights into local bees and their distributions.
+
+We invite you to explore the new and improved Galiwatch Bee Book. Your feedback is crucial as we continue to refine and expand this valuable resource. Join us in celebrating the incredible diversity of bees in the Pacific Maritime ecozone!
+
+
+
+<center>
+<a href="https://teaswamp-creations.github.io/bee-book"><button type="button" class="btn btn-secondary">See the project <i class="fa-solid fa-arrow-up-right-from-square"></i></button></a>
+</center>

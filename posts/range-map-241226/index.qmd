@@ -1,0 +1,51 @@
+---
+editor: visual
+title: Bee range
+date: 2024-12-26
+author: Kath Quayle & Cait Harrigan
+engine: knitr
+image: thumbnail.jpg
+lightbox: true
+categories:
+  - bees
+draft: true
+---
+
+Reading time: `r ifelse(file.size("index.qmd")/2000 <= 1.5, '<1 minute', paste0(round(file.size("index.qmd")/2000), ' minutes'))`
+
+
+```{r}
+library(tidyverse)
+library(ggforce)
+library(leaflet)
+library(bcmaps)
+
+# read in CSV data
+bees = read_csv('B. flavidus data.csv') %>%
+  # label for historical and recent
+  mutate(`Since 2023` = year(observed_on)>=2023) 
+
+# turn this into map format
+bees_points = st_as_sf(bees, coords = c("longitude", "latitude")) %>%
+  st_set_crs(4326) %>%  # set coordinate system
+  transform_bc_albers() # transform to bcmaps view
+
+# calculate range with convex hull
+bee_range = bees_points %>% 
+  group_by(`Since 2023`) %>% 
+  summarise() %>% 
+  st_concave_hull(ratio = 0.7)
+
+# plot bee map
+ggplot() +
+  geom_sf(data = bc_neighbours(), alpha = 0.1) +
+  #geom_sf(data = bc_cities(), colour = 'red', shape = 4) +
+  geom_sf(data = bee_range, alpha = 0.5, aes(fill = `Since 2023`)) + 
+  geom_sf(data = bees_points, aes(colour = `Since 2023`)) +
+  coord_sf(datum = NA) +
+  scale_colour_viridis_d() +
+  scale_fill_viridis_d() +
+  theme_minimal()
+
+
+```

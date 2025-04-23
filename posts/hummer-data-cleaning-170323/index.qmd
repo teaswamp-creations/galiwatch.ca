@@ -15,6 +15,8 @@ format:
 execute:
   warning: false
   message: false
+  
+draft: true
 
 ---
 
@@ -65,7 +67,7 @@ And we're even able to keep track of when the feeder needs a refill!
 
 
 
-## Setup
+# Setup
 
 Lets dive in to some of the data we've collected!
 
@@ -112,7 +114,7 @@ The bird detector gives us the the bounding box of each bird in an image, and th
 knitr::kable(head(bird))
 ```
 
-## Number of birds by species
+# Number of birds by species
 
 Our bird detector ID'd lots of visitors! Each ID represents a bird captured in an image, and **not necessarily an individual**. The images are captured once every minute, so if for example a single bird sat at the feeder for two minutes in a row, it would get counted twice. There may be multiple birds in a single image.
 
@@ -134,7 +136,7 @@ There are more Rufouses than Annas, and many more females + immature males than 
 
 :::
 
-## Classifier confidence
+# Classifier confidence
 
 Each bird ID is made by picking the the most likely label, based on the prediction probability. Sometimes, the classifier isn't as confident as others. For example, it may be harder to identify a bird that is facing away from the camera. We can plot the confidences, and see which birds are the hardest to label.
 
@@ -162,7 +164,7 @@ For both species, mature male birds are slightly harder to identify with high co
 
 :::
 
-## Filtering for high-confidence IDs
+# Filtering for high-confidence IDs
 
 We manually looked at the images, and found that that almost all the Rufouses after September 1st are false positives, so we'll remove these observations. Also, since we have few IDs in October compared to other months, we will drop this month from our data. Then, we'll filter to only retain the high-confidence (\> 0.7 prediction probability) bird IDs
 
@@ -206,7 +208,7 @@ This distribution more or less makes sense, we see some very small bounding boxe
 Lets see if looking at the bird position with respect to the feeder helps sort this out. 
 
 
-## Batch correction and normalization
+# Batch correction and normalization
 
 We can plot the location of where each bird sits, with the proxy that a birds will be located at the center of its bounding box (indicated by xmid and ymid). The birds appear to mostly sit in a circle, around the rim of the feeder. This gives the best access to the sugar water.
 
@@ -372,7 +374,7 @@ There are more short and wide bounding boxes than tall and thin ones.
 
 :::
 
-## Number of ID's after filtering
+# Number of ID's after filtering
 
 After all this filtering, here's the final numbers of each class label:
 
@@ -399,7 +401,7 @@ There are more Rufouses than Annas, and many more females than males captured in
 :::
 
 
-## Summary
+# Summary
 
 We've filtered out low-confidence ID's and suspicious aspect-ratio bounding boxes. Each row in our dataframe corresponds to a picture of a bird, not necessarily an individual. Female and immature males are not possible to distinguish, they are both classified as females. There are more birds labeled as female than male for both Anna and Rufous. There are more Rufous than Anna. Bounding boxes tend to be short and wide more often than tall and thin. 
 

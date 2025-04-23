@@ -13,6 +13,7 @@ format:
     toc: true
     code-fold: true
 lightbox: true
+draft: true
 execute:
   warning: false
   message: false
@@ -20,17 +21,16 @@ execute:
 
 Reading time: `r ifelse(file.size("index.qmd")/2000 < 1, '<1 minute', paste0(round(file.size("index.qmd")/2000), ' minutes'))`
 
-::: {.callout-note icon=false}
+::: {.callout-note icon="false"}
 # Series Part 2
 
-This is the second post in this deep-dive series.  
+This is the second post in this deep-dive series.\
 You can start from the beginning with [Part 1](/posts/hummer-data-cleaning-170323), or skip forward to [Part 3](/posts/hummer-seasons-140823)
 :::
 
+In this post, we'll look into some physical characteristics of the birds: how big they are and where they like to sit
 
-In this post, we'll look into some physical characteristics of the birds: how big they are and where they like to sit 
-
-## Setup
+# Setup
 
 As previously covered in Part 1, we're looking at the hummingbird detection data from summer 2021. We did some preliminary data cleaning, and now we'll investigate comparing sizes between species.
 
@@ -39,32 +39,30 @@ library(tidyverse)
 library(lubridate)
 library(patchwork)
 library(ggpubr)
+knitr::opts_chunk$set(eval = FALSE) 
 
 # read in bird detection data, and do some basic data cleaning
 bird_scaled <- read_csv('https://raw.githubusercontent.com/teaswamp-creations/galiwatch.ca/refs/heads/quarto-website/posts/hummer-data-cleaning-170323/bird_scaled.csv') 
 ```
 
-
-
-Note that because of the camera perspective, bounding box area will be affected by not only the bird size, but also its closeness to the camera. 
+Because of the camera perspective, bounding box area will be affected by not only the bird size, but also its pose and closeness to the camera.
 
 ```{r}
 bird_scaled %>% 
   ggplot(aes(x=xmid, y = -ymid, color=Area)) + 
   geom_point() + 
   theme_pubr() + 
-  theme(legend.key.width = unit(1, "cm"))
+  theme(legend.key.width = unit(1, "cm")) + 
+  scale_colour_gradientn(colours = c('#A0CFC4', '#376D61', 'black')) + 
+  lims(y = c(-550, -200)) 
+
 ```
 
-:::{.callout-note icon=false}
-
+::: {.callout-note icon="false"}
 ## `r emo::ji('brain')` Observation
 
-Birds closer to the front of the feeder have larger bounding boxes. 
-
+Birds closer to the front of the feeder have larger bounding boxes.
 :::
-
-
 
 ```{r}
 bird_scaled %>% 
@@ -77,7 +75,7 @@ bird_scaled %>%
 
 We can see two dips in the areas, as noted previously. The dips we see around 18,000 and 38,000 bounding box size are surprising, this means that there are certain height/width combinations that are not being picked up very frequently. This may indicate that there are certain positions on the feeder at which we can't effectively identify birds.
 
-We see this even more clearly by plotting bird height against width. 
+We see this even more clearly by plotting bird height against width.
 
 ```{r message=F, warning=F}
 bird_scaled %>%
@@ -86,6 +84,8 @@ bird_scaled %>%
   theme(legend.position = 'right', legend.direction = 'vertical') +
   scale_color_ordinal(option='D')
 ```
+
+# Distribution of high-confidence ID's
 
 There's some height/widths with no birds observed at them! To check whether this may be related to out classifier's ability to call these birds, we can colour this plot by the confidence level (recall: we already filtered the data such that all ID's have confidence \> 0.7).
 
@@ -97,7 +97,8 @@ bird_scaled %>%
   theme_pubr() + 
   labs(fill = 'Confidence', X = "Confidence", y = "Count")
 ```
-We'll colour confidence by levels for visualization purposes. 
+
+We'll colour confidence by levels for visualization purposes.
 
 ```{r message=F, warning=F}
 bird_scaled %>%
@@ -120,94 +121,87 @@ In terms of x location, distribution of bird sitting position is strikingly diff
 bird_scaled %>%
   mutate(confidence_lvl = cut(confidence, c(0.7, 0.9, 0.98, 1), ordered_result=T)) %>%
   ggplot(aes(x = xmid, fill = confidence_lvl, colour = confidence_lvl)) + 
-  geom_density(alpha = 0.5, linwidth=1) + theme_pubr() + 
+  geom_density(alpha = 0.5, colour = NA) + theme_pubr() + 
   labs(title = 'X position', y = 'Density', 
        fill = 'Confidence Level', colour = 'Confidence Level')
 ```
 
-On the other hand, it seems that those lower-confidence birds may be over-represented at the small-y (top of image) locations.  
+On the other hand, it seems that those lower-confidence birds may be over-represented at the higher (further from the camera) positions.
 
 ```{r}
 bird_scaled %>%
   mutate(confidence_lvl = cut(confidence, c(0.7, 0.9, 0.98, 1), ordered_result=T)) %>%
-  ggplot(aes(x = ymid, fill = confidence_lvl, colour = confidence_lvl)) + 
-  geom_density(alpha = 0.5, linewidth=1) + theme_pubr() + 
+  ggplot(aes(x = -ymid, fill = confidence_lvl, colour = confidence_lvl)) + 
+  geom_density(alpha = 0.5, colour = NA) + theme_pubr() + 
   labs(title = 'Y position', y = 'Density', 
        fill = 'Confidence Level', colour = 'Confidence Level')
 
 ```
-:::{.callout-note icon=false}
 
+::: {.callout-note icon="false"}
 ## `r emo::ji('brain')` Observation
 
-Our low-confidence bird calls coming mostly from a mid-sized bounding box, and towards the back of the feeder. 
+Our low-confidence bird calls coming mostly from a mid-sized bounding box, and towards the back of the feeder.
 :::
 
+There are some low-confidence calls *OFF* the feeder. These are birds who were identified mid-flight! These fast-moving birds might be harder to classify. There are also low-confidence calls in the middle. These birds sit with their back to the camera, and may therefore be harder to identify.
 
 ```{r}
-bird_scaled %>% 
-  mutate(confidence_lvl = cut(confidence, c(0.7, 0.9, 0.98, 1), ordered_result=T)) %>%
-  ggplot(aes(x=xmid, y = -ymid, color=confidence_lvl)) + 
-  geom_point() + 
-  geom_point(alpha = 0.7) + 
+bird_scaled %>%
+ggplot(aes(x = xmid, y = -ymid, z = confidence)) +
+  stat_summary_2d(bins = 100, fun = median) +
+  scale_fill_gradientn(colors = c('#440154', "#21908C", "#27AD81", "#FDE725"),
+                       values = scales::rescale(c(0.7, 0.9, 0.98, 1))) + 
   theme_pubr() + 
-  labs(colour = 'Confidence')
+  labs(fill = 'Median confidence') + 
+  lims(y = c(-550, -200)) 
 ```
 
-Notably, there are low-confidence calls *OFF* the feeder. These are birds who were identified mid-flight! Makes sense that the fast-moving birds might be harder to classify. 
-There are also  low-confidence calls in the middle. These birds sit with their back to the camera, and may therefore be harder to identify.
+# Distribution of sitting spots
 
-## Distribution of sitting spots
-
-Birds seem to have a preference for the left side of the feeder! 
+Birds seem to have a preference for the left side of the feeder.
 
 ```{r}
 bird_scaled %>% 
   ggplot(aes(x=xmid, y = -ymid)) + 
   stat_density_2d(aes(fill = after_stat(nlevel)), geom = "polygon") +
-  scale_fill_viridis_b() + 
   theme_pubr() + 
   coord_equal() + 
   scale_fill_viridis_c(option = "mako") + 
-  labs(fill = "Proportion of IDs")
+  labs(fill = "Relative density")
 
 ```
 
-The variability of confidence according to position may be confounded with Species and Sex classes: Through manual observation we noticed that different birds had different sitting spot preferences. 
-
+The variability of confidence according to position may be confounded with Species and Sex classes: Through manual observation we noticed that different birds had different sitting spot preferences.
 
 ```{r}
 bird_scaled %>% 
   ggplot(aes(x=xmid, y = -ymid)) + 
   stat_density_2d(aes(fill = after_stat(nlevel)), geom = "polygon") +
   scale_fill_viridis_b() + 
-  facet_wrap(Species~Sex) + 
+  facet_grid(Species~Sex) + 
   theme_pubr() + 
   coord_equal() + 
   scale_fill_viridis_c(option = 'mako') + 
-  labs(fill = "Proportion of IDs")
+  labs(fill = "Relative density")
 
 ```
 
-
-
-:::{.callout-note icon=false}
+::: {.callout-note icon="false"}
 ## `r emo::ji('brain')` Observation
 
-Female + immature male birds tend to to be ID'd towards the front of the feeder. Mature male Annas tend to be ID'd on the left, and mature male Rufous tend to be ID'd on the right side of the feeder. 
+Female + immature male birds tend to to be ID'd towards the front of the feeder. Mature male Annas tend to be ID'd on the left, and mature male Rufous tend to be ID'd on the right side of the feeder.
 
-This could be because they actually do sit in those spots more often, or because they're easier to identify when they sit there. 
+This could be because they actually do sit in those spots more often, or because they're easier to identify when they sit there.
 :::
-
 
 # Pose
 
-In addition to whether a bird is close to the camera or not, we should keep in mind its pose on the feeder: birds in the middle of the feeder will likely result in bounding boxes that are taller, while birds on the sides may have a wider "profile view" bounding box:
+In addition to whether a bird is close to the camera or not, we should keep in mind its pose on the feeder: the birds almost always face towards the middle, where the food is. Birds in the center of the feeder will likely result in bounding boxes that are taller, while birds on the sides may have a wider "profile view" bounding box:
 
 ![](feeder_view.png)
 
-Let's looks at the height and width of the bounding boxes to get a better sense of the effect of sitting pose. 
-
+Let's looks at the height and width of the bounding boxes to get a better sense of the effect of sitting pose.
 
 ```{r}
 bird_scaled %>%
@@ -224,7 +218,7 @@ bird_scaled %>%
   theme(legend.background = element_blank())
 ```
 
-:::{.callout-note icon=false}
+::: {.callout-note icon="false"}
 ## `r emo::ji('brain')` Observation
 
 Bird pose, and subsequently aspect ratio depends on where on the feeder they sit.
@@ -232,44 +226,41 @@ Bird pose, and subsequently aspect ratio depends on where on the feeder they sit
 
 We know that the bounding boxes with the largest area are those IDing bird close to the camera, but that in the middle, confidence in IDs is relatively low. We suspect that it is challenging to identify sex/species because they face away from the camera when birds are sitting in that spot. (ie. their back points to the camera when they eat from the feeder). Our confidence levels support that hypothesis:
 
-
 ```{r}
 bird_scaled %>%
   mutate(confidence_lvl = cut(confidence, c(0.7, 0.9, 0.98, 1), ordered_result=T)) %>%
-  ggplot(aes( x = log2(Width/Height), colour = confidence_lvl, fill = confidence_lvl)) + 
-  geom_density(alpha = 0.3, linewidth = 1) +
+  ggplot(aes( x = log2(Width/Height), fill = confidence_lvl)) + 
+  geom_density(alpha = 0.5, colour = NA) +
   theme_pubr() + 
   labs(fill ='Confidence level', colour ='Confidence level',y = 'Density')
   
 ```
 
-:::{.callout-note icon=false}
+::: {.callout-note icon="false"}
 ## `r emo::ji('brain')` Observation
 
-High confidence ID's tend to be short & wide (profile view) rather than tall and thin (back view). 
+High confidence ID's tend to be short & wide (profile view) rather than tall and thin (back view).
 :::
-
 
 # Size comparison across species
 
-Annas humming birds tend to be a little larger than Rufous [^1], and Annas male and females are more or less the same size [^2]. Within the Rufous species however, males tend to be a little smaller than females [^3].
+Annas humming birds are a little larger than Rufous [^1], and Annas male and females are more or less the same size [^2]. Within the Rufous species however, males tend to be a little smaller than females [^3].
 
-|           |Annas                  |Rufous                 |
-|-----------|-----------------------|-----------------------|
-| Length:   |  3.9 in (10 cm)       |   2.8-3.5 in (7-9 cm) |
-| Weight:   |  0.1-0.2 oz (3-6 g)   |   0.1-0.2 oz (2-5 g)  |
-| Wingspan: |  4.7 in (12 cm)       |   4.3 in (11 cm)      |
+[^1]: [Rufous](https://www.allaboutbirds.org/guide/Rufous_Hummingbird/id) and [Anna](https://www.allaboutbirds.org/guide/Annas_Hummingbird/id) measurements taken from allaboutbirds.org
+
+[^2]: [Annas birdfacts](https://birdfact.com/articles/female-annas-hummingbirds)
+
+[^3]: [Rufous birdfacts](https://birdfact.com/articles/female-rufous-hummingbirds)
+
+|           | Annas              | Rufous              |
+|-----------|--------------------|---------------------|
+| Length:   | 3.9 in (10 cm)     | 2.8-3.5 in (7-9 cm) |
+| Weight:   | 0.1-0.2 oz (3-6 g) | 0.1-0.2 oz (2-5 g)  |
+| Wingspan: | 4.7 in (12 cm)     | 4.3 in (11 cm)      |
 
 : Measurments taken from allaboutbirds.org
 
-
-[^1]: [Rufous](https://www.allaboutbirds.org/guide/Rufous_Hummingbird/id) and [Anna](https://www.allaboutbirds.org/guide/Annas_Hummingbird/id) measurements taken from allaboutbirds.org
-[^2]: [Annas birdfacts](https://birdfact.com/articles/female-annas-hummingbirds)
-[^3]: [Rufous birdfacts](https://birdfact.com/articles/female-rufous-hummingbirds)
-
-
-Assuming that preferred sitting position is independent of bird species and sex, we could compare directly the bounding boxes of the different classes. 
-
+Assuming that preferred sitting position is independent of bird species and sex, we could compare directly the bounding boxes of the different classes.
 
 ```{r}
 bird_scaled %>%
@@ -283,7 +274,7 @@ bird_scaled %>%
 
 ```
 
-However as we know, this assumption is not the case. To make a fair comparison of sizes across the sex and species classes, we should account for pose/position of the birds.
+However as we know, this assumption is not the case. If we want to make a fair comparison of sizes across the sex and species classes, we should account for pose/position of the birds.
 
 
 ## Summary
@@ -293,10 +284,7 @@ Birds closer to the front of the feeder have larger bounding boxes. Our low-conf
 Recalling that it's not possible to distinguish the female from immature male birds, it's also hard to tell apart the different species when their back is facing the camera. 
 
 
-:::{.callout-note icon=false}
+
+::: {.callout-note icon="false"}
 ## Read on to [Part 3 <i class="fa-solid fa-arrow-right"></i>](/posts/hummer-seasons-140823)
 :::
-
-
-
-

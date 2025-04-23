@@ -1,0 +1,40 @@
+---
+title: Big book of bees!
+date: 2023-12-23
+author: claude.ai (reviewed & edited by Cait Harrigan)
+engine: knitr
+image: thumbnail.png
+categories:
+  - news
+  - database
+  - bees
+  - conservation
+---
+
+Reading time: `r ifelse(file.size("index.qmd")/2000 <= 1.5, '<1 minute', paste0(round(file.size("index.qmd")/2000), ' minutes'))`
+
+## Exciting New Resource for Pacific Maritime Bee Enthusiasts!
+
+Announcing the launch of the "Pacific Maritime Big Book of Bees" - a comprehensive digital resource for bee enthusiasts, researchers, and conservationists in British Columbia's Pacific Maritime ecozone.
+
+This online database brings together a wealth of information on native bee species documented in the region. Whether you're a seasoned entomologist or a curious nature lover, this tool offers something for everyone.
+
+Key features include:
+
+1. A detailed gallery of native bee species, based on Sheffield and Heron's 2018 list and recent research-grade sightings from iNaturalist, GBIF, and the Galiano Biodiversity Life List.
+
+2. High-quality images from iNaturalist and the Spencer Entomological Collection, helping users with species identification.
+
+3. Interactive maps showing observation data for different bee families and species in the Pacific Maritime region.
+
+4. At-a-glance badges indicating species status, including presence on official lists and evidence of sightings in specific areas.
+
+5. Links to external resources like GBIF and iNaturalist for additional information on each species.
+
+What sets this resource apart is its focus on the Pacific Maritime ecozone, making it an invaluable tool for local biodiversity efforts. The database not only helps with species identification but also provides insights into the distribution and observation history of various bee species in the region. We welcome feedback and are continually working to improve and expand the database. 
+
+Visit the Pacific Maritime Big Book of Bees today and dive into the fascinating world of our local pollinators!
+
+<center>
+<a href="https://teaswamp-creations.github.io/bee-book"><button type="button" class="btn btn-secondary">See the project <i class="fa-solid fa-arrow-up-right-from-square"></i></button></a>
+</center>
