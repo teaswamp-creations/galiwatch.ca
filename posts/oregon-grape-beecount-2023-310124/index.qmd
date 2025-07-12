@@ -65,25 +65,25 @@ As average daily temperature rose, flower buds steadily opened and the plants we
 
 We have seen a lot of variation in weather conditions and phenology of Oregon grape over our first three years of data collection.
 
-+---------+----------------------------------------------------------------------------------------------------------------------------------+
-| Year    | Weather conditions                                                                                                               |
-+=========+==================================================================================================================================+
-| 2021    | Avg. daily temperatures between 6^o^C and 8^o^C from mid-Mar to Apr 12^th^.\                                                     |
-|         | A sharp increase in avg. daily temperature to over 10^o^C on Apr 13^th^ was followed by bud break on Apr 14^th^.\                |
-|         | Rainfall two weeks prior to blooming - rain on 2 days; total 3 mm.\                                                              |
-|         | Rainfall during blooming (Apr 14^th^ - May 3^rd^) - 5 days; total 12.7 mm                                                        |
-+---------+----------------------------------------------------------------------------------------------------------------------------------+
-| 2022    | Avg. daily temperatures between 6^o^C and 8^o^C from mid-Mar to early Apr.\                                                      |
-|         | A sharp increase in avg. daily temperature on Apr 7^th^ from 6^o^C to just over 10^o^C was followed by bud break on Apr 9^th^.\  |
-|         | Extended cool weather rarely reaching 10^o^C for remainder of flowering.\                                                        |
-|         | Rainfall two weeks prior to blooming - 6 days; total 33.8 mm.\                                                                   |
-|         | Rainfall during blooming (Apr 9^th^ to May 5^th^) - 16 days; total 96.5 mm.                                                      |
-+---------+----------------------------------------------------------------------------------------------------------------------------------+
-| 2023    | Avg. daily temperatures fluctuating between 5-6^o^C for a few days to around 9-10^o^C for a few days from mid-Mar to early Apr.\ |
-|         | Despite warmer temperatures of 9-10^o^C between Apr 6^th^ and 9^th^, bud break did not start until Apr 19^th^.\                  |
-|         | Rainfall two weeks prior to blooming - 9 days; total 27.6 mm.\                                                                   |
-|         | Rainfall during blooming (Apr 19^th^ to May 10^th^) - 9 days; total 23.8 mm.                                                     |
-+---------+----------------------------------------------------------------------------------------------------------------------------------+
++------+----------------------------------------------------------------------------------------------------------------------------------+
+| Year | Weather conditions                                                                                                               |
++======+==================================================================================================================================+
+| 2021 | Avg. daily temperatures between 6^o^C and 8^o^C from mid-Mar to Apr 12^th^.\                                                     |
+|      | A sharp increase in avg. daily temperature to over 10^o^C on Apr 13^th^ was followed by bud break on Apr 14^th^.\                |
+|      | Rainfall two weeks prior to blooming - rain on 2 days; total 3 mm.\                                                              |
+|      | Rainfall during blooming (Apr 14^th^ - May 3^rd^) - 5 days; total 12.7 mm                                                        |
++------+----------------------------------------------------------------------------------------------------------------------------------+
+| 2022 | Avg. daily temperatures between 6^o^C and 8^o^C from mid-Mar to early Apr.\                                                      |
+|      | A sharp increase in avg. daily temperature on Apr 7^th^ from 6^o^C to just over 10^o^C was followed by bud break on Apr 9^th^.\  |
+|      | Extended cool weather rarely reaching 10^o^C for remainder of flowering.\                                                        |
+|      | Rainfall two weeks prior to blooming - 6 days; total 33.8 mm.\                                                                   |
+|      | Rainfall during blooming (Apr 9^th^ to May 5^th^) - 16 days; total 96.5 mm.                                                      |
++------+----------------------------------------------------------------------------------------------------------------------------------+
+| 2023 | Avg. daily temperatures fluctuating between 5-6^o^C for a few days to around 9-10^o^C for a few days from mid-Mar to early Apr.\ |
+|      | Despite warmer temperatures of 9-10^o^C between Apr 6^th^ and 9^th^, bud break did not start until Apr 19^th^.\                  |
+|      | Rainfall two weeks prior to blooming - 9 days; total 27.6 mm.\                                                                   |
+|      | Rainfall during blooming (Apr 19^th^ to May 10^th^) - 9 days; total 23.8 mm.                                                     |
++------+----------------------------------------------------------------------------------------------------------------------------------+
 
 #### Average daily temperature and bud break
 
@@ -96,7 +96,7 @@ We have seen a lot of variation in weather conditions and phenology of Oregon gr
 | Bud break       | Apr 14th | Apr 9th  | Apr 20th |
 | Fully flowering | Apr 27th | Apr 29th | May 5th  |
 | Flowering over  | May 3rd  | May 5th  | May 10th |
-| Days in bloom   |    19    |    26    |    29    |
+| Days in bloom   |    19    |    26    |    21    |
 
 ## Bee count
 
