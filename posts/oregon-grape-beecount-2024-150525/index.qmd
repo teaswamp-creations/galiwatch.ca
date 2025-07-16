@@ -5,6 +5,7 @@ image: thumbnail.jpg
 title: Oregon grape bee count - 2024
 date: 2025-05-15
 author: Kath Quayle
+engine: knitr
 categories:
   - news
   - analysis
