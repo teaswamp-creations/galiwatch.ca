@@ -13,7 +13,6 @@ format:
     toc: true
     code-fold: true
 lightbox: true
-draft: true
 execute:
   warning: false
   message: false
@@ -39,7 +38,6 @@ library(tidyverse)
 library(lubridate)
 library(patchwork)
 library(ggpubr)
-knitr::opts_chunk$set(eval = FALSE) 
 
 # read in bird detection data, and do some basic data cleaning
 bird_scaled <- read_csv('https://raw.githubusercontent.com/teaswamp-creations/galiwatch.ca/refs/heads/quarto-website/posts/hummer-data-cleaning-170323/bird_scaled.csv') 
@@ -276,14 +274,11 @@ bird_scaled %>%
 
 However as we know, this assumption is not the case. If we want to make a fair comparison of sizes across the sex and species classes, we should account for pose/position of the birds.
 
-
 ## Summary
 
-Birds closer to the front of the feeder have larger bounding boxes. Our low-confidence bird calls coming mostly from a mid-sized bounding box, and towards the back of the feeder. Bird pose, and subsequently aspect ratio depends on where on the feeder they sit. High confidence ID’s tend to be short & wide (profile view) rather than tall and thin (back view). 
+Birds closer to the front of the feeder have larger bounding boxes. Our low-confidence bird calls coming mostly from a mid-sized bounding box, and towards the back of the feeder. Bird pose, and subsequently aspect ratio depends on where on the feeder they sit. High confidence ID’s tend to be short & wide (profile view) rather than tall and thin (back view).
 
-Recalling that it's not possible to distinguish the female from immature male birds, it's also hard to tell apart the different species when their back is facing the camera. 
-
-
+Recalling that it's not possible to distinguish the female from immature male birds, it's also hard to tell apart the different species when their back is facing the camera.
 
 ::: {.callout-note icon="false"}
 ## Read on to [Part 3 <i class="fa-solid fa-arrow-right"></i>](/posts/hummer-seasons-140823)

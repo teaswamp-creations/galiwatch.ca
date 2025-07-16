@@ -1,0 +1,50 @@
+---
+title: Bird song
+date: 2025-07-17
+author: Cait Harrigan
+engine: knitr
+image: thumbnail.jpg
+categories:
+---
+
+Reading time: `r ifelse(file.size("index.qmd")/2000 < 1, '<1 minute', paste0(round(file.size("index.qmd")/2000), ' minutes'))`
+
+```{r}
+library(tidyverse)
+bird <- read_delim('BirdDB.txt', delim=';') 
+bird <- bird %>%
+    mutate(
+        Week = factor(week(Date)),
+        Month = factor(month(Date), label=T),
+        Day = wday(Date, label=T),
+        Hour = hour(Time)
+    )
+```
+
+```{r}
+bird %>%
+    mutate(species_abbrev = fct_lump_n(Com_Name, n=10, other_level="Other")) %>%
+    group_by(Week, species_abbrev) %>%
+    summarize(n=n()) %>%
+    ggplot(aes(x = Week, y = n, fill = species_abbrev)) +
+    geom_col() + 
+    scale_fill_viridis_d(name = 'Species', option = 'magma') + 
+    facet_wrap(~species_abbrev, ncol=3)
+
+```
+
+# top 10 with pics
+
+
+# anna vs rufous hummingbird
+
+```{r}
+bird %>%
+    filter(Com_Name %in% c('Anna\'s Hummingbird', 'Rufous Hummingbird')) %>%
+    group_by(Week, Com_Name) %>%
+    summarize(n=n()) %>%
+    ggplot(aes(x = Week, y = n, fill = Com_Name)) +
+    geom_col(position = 'dodge') + 
+    scale_fill_manual(values = c('Anna\'s Hummingbird'='chartreuse3','Rufous Hummingbird'='chocolate2')) 
+
+```
