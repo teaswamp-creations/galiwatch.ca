@@ -1,5 +1,7 @@
 ---
 editor: visual
+lightbox: true
+image: thumbnail.jpg
 title: Oregon grape bee count - 2024
 date: 2025-05-15
 author: Kath Quayle
@@ -12,7 +14,7 @@ categories:
   - phenology
 ---
 
-Reading time: `r ifelse(file.size("index.qmd")/2000 <= 1.5, '<1 minute', paste0(round(file.size("index.qmd")/2000), ' minutes'))`![](images/PXL_20250511_000112433.jpg)
+Reading time: `r ifelse(file.size("index.qmd")/2000 <= 1.5, '<1 minute', paste0(round(file.size("index.qmd")/2000), ' minutes'))`
 
 ## What we learned in 2024
 

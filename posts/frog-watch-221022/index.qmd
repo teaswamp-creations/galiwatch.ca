@@ -11,15 +11,11 @@ categories:
 
 Reading time: `r ifelse(file.size("index.qmd")/2000 <= 1.5, '<1 minute', paste0(round(file.size("index.qmd")/2000), ' minutes'))`
 
-
-
 # Galiano has just two kinds of frogs!
 
 ## Northern Pacific tree frogs (Pseudacris regilla)
 
 These frogs are often bright green, but also come in grey, tan, and brown. They can change colour during the season to better match their environment. The colour change is triggered in response to brightness.
-
-
 
 ```{r, echo = F}
 pixture::pixfigure('images/Frogs.png')
@@ -30,8 +26,8 @@ Like most frogs, tree frogs are most active at night, typically resting up in sh
 Our infra red time lapse camera caught this one hopping through the salal bushes in the middle of the night.
 
 <center>
-![](images/frogs_at_night.gif)
 
+![](images/frogs_at_night.gif)
 
 ```{r, echo=F}
 embedr::embed_audio("images/Frogs.mp3")
