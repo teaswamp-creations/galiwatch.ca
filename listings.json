@@ -1,7 +1,8 @@
 [
   {
-    "listing": "/blog.html",
+    "listing": "/index.html",
     "items": [
+      "/posts/oregon-grape-beecount-2024-150525/index.html",
       "/posts/feature-bee-bflavidus-180924/index.html",
       "/posts/bee-book-240913/index.html",
       "/posts/bee-plant-database-250624/index.html",
@@ -11,11 +12,9 @@
       "/posts/bee-book-231223/index.html",
       "/posts/bombus-vosnesenskii-151023/index.html",
       "/posts/meet-the-bees-130823/index.html",
-      "/posts/hummer-sizes-110523/index.html",
       "/posts/bird-song-220423/index.html",
       "/posts/hummer-watch-300323/index.html",
       "/posts/hummer-watch-200323/index.html",
-      "/posts/hummer-data-cleaning-170323/index.html",
       "/posts/recap-170323/index.html",
       "/posts/operations-update-130323/index.html",
       "/posts/oregon-grape-seasons-130323/index.html",
