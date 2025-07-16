@@ -15,17 +15,12 @@ website:
       </a>
   google-analytics: "G-YZBNVRR4EQ"
   navbar:
-    left: 
+    right:
       - text: Project Details
         href: project.qmd
       - text: Bee Book
         icon: box-arrow-up-right
         href: https://teaswamp-creations.github.io/bee-book
-
-    right:
-      
-      - text: Blog
-        href: blog.qmd
       - text: Gallery
         href: gallery.qmd
       - text: About
