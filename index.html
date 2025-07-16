@@ -75,7 +75,8 @@ ul.task-list li input[type="checkbox"] {
 
     const options = {
       valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
+      page: 25,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
       searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
@@ -162,7 +163,7 @@ gtag('config', 'G-YZBNVRR4EQ', { 'anonymize_ip': true});
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(25)</span></div><div class="category" data-category="BeeNuker3000">BeeNuker3000 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="analysis">analysis <span class="quarto-category-count">(4)</span></div><div class="category" data-category="audio moth">audio moth <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bee count">bee count <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bees">bees <span class="quarto-category-count">(9)</span></div><div class="category" data-category="bird song">bird song <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bumblebees">bumblebees <span class="quarto-category-count">(1)</span></div><div class="category" data-category="chit chat">chit chat <span class="quarto-category-count">(3)</span></div><div class="category" data-category="climate">climate <span class="quarto-category-count">(5)</span></div><div class="category" data-category="code">code <span class="quarto-category-count">(2)</span></div><div class="category" data-category="conservation">conservation <span class="quarto-category-count">(5)</span></div><div class="category" data-category="data analysis">data analysis <span class="quarto-category-count">(6)</span></div><div class="category" data-category="database">database <span class="quarto-category-count">(3)</span></div><div class="category" data-category="deep-dive">deep-dive <span class="quarto-category-count">(1)</span></div><div class="category" data-category="feature bee">feature bee <span class="quarto-category-count">(1)</span></div><div class="category" data-category="frogs">frogs <span class="quarto-category-count">(1)</span></div><div class="category" data-category="hardware">hardware <span class="quarto-category-count">(1)</span></div><div class="category" data-category="hummingbirds">hummingbirds <span class="quarto-category-count">(3)</span></div><div class="category" data-category="news">news <span class="quarto-category-count">(16)</span></div><div class="category" data-category="phenology">phenology <span class="quarto-category-count">(4)</span></div><div class="category" data-category="pilot project">pilot project <span class="quarto-category-count">(2)</span></div><div class="category" data-category="plant associations">plant associations <span class="quarto-category-count">(1)</span></div><div class="category" data-category="surveillance">surveillance <span class="quarto-category-count">(3)</span></div><div class="category" data-category="taxonomy">taxonomy <span class="quarto-category-count">(1)</span></div><div class="category" data-category="weather">weather <span class="quarto-category-count">(2)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(27)</span></div><div class="category" data-category="BeeNuker3000">BeeNuker3000 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="analysis">analysis <span class="quarto-category-count">(4)</span></div><div class="category" data-category="audio moth">audio moth <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bee count">bee count <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bees">bees <span class="quarto-category-count">(9)</span></div><div class="category" data-category="bird song">bird song <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bumblebees">bumblebees <span class="quarto-category-count">(1)</span></div><div class="category" data-category="chit chat">chit chat <span class="quarto-category-count">(3)</span></div><div class="category" data-category="climate">climate <span class="quarto-category-count">(5)</span></div><div class="category" data-category="code">code <span class="quarto-category-count">(3)</span></div><div class="category" data-category="conservation">conservation <span class="quarto-category-count">(5)</span></div><div class="category" data-category="data analysis">data analysis <span class="quarto-category-count">(7)</span></div><div class="category" data-category="database">database <span class="quarto-category-count">(3)</span></div><div class="category" data-category="deep-dive">deep-dive <span class="quarto-category-count">(2)</span></div><div class="category" data-category="feature bee">feature bee <span class="quarto-category-count">(1)</span></div><div class="category" data-category="frogs">frogs <span class="quarto-category-count">(1)</span></div><div class="category" data-category="hardware">hardware <span class="quarto-category-count">(1)</span></div><div class="category" data-category="hummingbirds">hummingbirds <span class="quarto-category-count">(4)</span></div><div class="category" data-category="news">news <span class="quarto-category-count">(16)</span></div><div class="category" data-category="phenology">phenology <span class="quarto-category-count">(4)</span></div><div class="category" data-category="pilot project">pilot project <span class="quarto-category-count">(2)</span></div><div class="category" data-category="plant associations">plant associations <span class="quarto-category-count">(1)</span></div><div class="category" data-category="surveillance">surveillance <span class="quarto-category-count">(3)</span></div><div class="category" data-category="taxonomy">taxonomy <span class="quarto-category-count">(1)</span></div><div class="category" data-category="weather">weather <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
 
@@ -189,7 +190,35 @@ gtag('config', 'G-YZBNVRR4EQ', { 'anonymize_ip': true});
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="news,analysis,weather,bee count,surveillance,phenology" data-listing-date-sort="1747292400000" data-listing-file-modified-sort="1752634108767" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1752735600000" data-listing-file-modified-sort="1752687302457" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="thumbnail">
+<p><a href="./posts/birdsong-160725/index.html"> <img src="./posts/birdsong-160725/thumbnail.jpg" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/birdsong-160725/index.html">
+<h3 class="no-anchor listing-title">
+Bird song
+</h3>
+<div class="listing-subtitle">
+
+</div>
+<div class="listing-description">
+Reading time: &lt;1 minute
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/birdsong-160725/index.html">
+<div class="listing-date">
+Jul 17, 2025
+</div>
+<div class="listing-author">
+Cait Harrigan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="news,analysis,weather,bee count,surveillance,phenology" data-listing-date-sort="1747292400000" data-listing-file-modified-sort="1752640944557" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
 <div class="thumbnail">
 <p><a href="./posts/oregon-grape-beecount-2024-150525/index.html"> <img src="./posts/oregon-grape-beecount-2024-150525/thumbnail.jpg" class="thumbnail-image"> </a></p>
 </div>
@@ -239,7 +268,7 @@ Kath Quayle
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="feature bee,bumblebees,plant associations,news" data-listing-date-sort="1726642800000" data-listing-file-modified-sort="1752623832930" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="2" data-categories="feature bee,bumblebees,plant associations,news" data-listing-date-sort="1726642800000" data-listing-file-modified-sort="1752635378805" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
 <div class="thumbnail">
 <p><a href="./posts/feature-bee-bflavidus-180924/index.html"> <img src="./posts/feature-bee-bflavidus-180924/thumbnail.jpeg" class="thumbnail-image"> </a></p>
 </div>
@@ -283,7 +312,7 @@ Kath Quayle
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="news,database,bees,conservation" data-listing-date-sort="1726210800000" data-listing-file-modified-sort="1752623832845" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="3" data-categories="news,database,bees,conservation" data-listing-date-sort="1726210800000" data-listing-file-modified-sort="1752635378801" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
 <div class="thumbnail">
 <p><a href="./posts/bee-book-240913/index.html"> <img src="./posts/bee-book-240913/thumbnail.png" class="thumbnail-image"> </a></p>
 </div>
@@ -327,7 +356,7 @@ chatGPT 4o (reviewed &amp; edited by Cait Harrigan and Kath Quayle)
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="news,BeeNuker3000,bees,database,phenology,surveillance" data-listing-date-sort="1721631600000" data-listing-file-modified-sort="1752623832887" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
+<div class="quarto-post image-right" data-index="4" data-categories="news,BeeNuker3000,bees,database,phenology,surveillance" data-listing-date-sort="1721631600000" data-listing-file-modified-sort="1752635378802" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
 <div class="thumbnail">
 <p><a href="./posts/bee-plant-database-250624/index.html"> <img src="./posts/bee-plant-database-250624/thumbnail.jpg" class="thumbnail-image"> </a></p>
 </div>
@@ -377,7 +406,7 @@ Kath Quayle
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="bees,conservation,taxonomy" data-listing-date-sort="1707465600000" data-listing-file-modified-sort="1752623833152" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12">
+<div class="quarto-post image-right" data-index="5" data-categories="bees,conservation,taxonomy" data-listing-date-sort="1707465600000" data-listing-file-modified-sort="1752635378855" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12">
 <div class="thumbnail">
 <p><a href="./posts/taxonomy-050224/index.html"> <img src="./posts/taxonomy-050224/thumbnail.jpg" class="thumbnail-image"> </a></p>
 </div>
@@ -418,7 +447,7 @@ Richard Harrigan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="news,analysis,weather,bee count,phenology,surveillance" data-listing-date-sort="1706688000000" data-listing-file-modified-sort="1752623833003" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13">
+<div class="quarto-post image-right" data-index="6" data-categories="news,analysis,weather,bee count,phenology,surveillance" data-listing-date-sort="1706688000000" data-listing-file-modified-sort="1752635378850" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13">
 <div class="thumbnail">
 <p><a href="./posts/oregon-grape-beecount-2023-310124/index.html"> <img src="./posts/oregon-grape-beecount-2023-310124/thumbnail.jpg" class="thumbnail-image"> </a></p>
 </div>
@@ -468,7 +497,7 @@ Kath Quayle
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="hummingbirds" data-listing-date-sort="1704182400000" data-listing-file-modified-sort="1752623832999" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="7" data-categories="hummingbirds" data-listing-date-sort="1704182400000" data-listing-file-modified-sort="1752635378838" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
 <div class="thumbnail">
 <p><a href="./posts/hummer-watch-020124/index.html"> <img src="./posts/hummer-watch-020124/thumbnail.jpg" class="thumbnail-image"> </a></p>
 </div>
@@ -503,7 +532,7 @@ Richard Harrigan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="news,database,bees,conservation" data-listing-date-sort="1703318400000" data-listing-file-modified-sort="1752623832840" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="8" data-categories="news,database,bees,conservation" data-listing-date-sort="1703318400000" data-listing-file-modified-sort="1752635378800" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
 <div class="thumbnail">
 <p><a href="./posts/bee-book-231223/index.html"> <img src="./posts/bee-book-231223/thumbnail.png" class="thumbnail-image"> </a></p>
 </div>
@@ -547,7 +576,7 @@ claude.ai (reviewed &amp; edited by Cait Harrigan)
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="news,analysis,bees" data-listing-date-sort="1697353200000" data-listing-file-modified-sort="1707442342560" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="9" data-categories="news,analysis,bees" data-listing-date-sort="1697353200000" data-listing-file-modified-sort="1752635378803" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
 <div class="thumbnail">
 <p><a href="./posts/bombus-vosnesenskii-151023/index.html"> <img src="./posts/bombus-vosnesenskii-151023/thumbnail.jpg" class="thumbnail-image"> </a></p>
 </div>
@@ -588,7 +617,7 @@ Kath Quayle
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="bees" data-listing-date-sort="1691910000000" data-listing-file-modified-sort="1707442342942" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="10" data-categories="bees" data-listing-date-sort="1691910000000" data-listing-file-modified-sort="1752635378848" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
 <div class="thumbnail">
 <p><a href="./posts/meet-the-bees-130823/index.html"> <img src="./posts/meet-the-bees-130823/thumbnail.png" class="thumbnail-image"> </a></p>
 </div>
@@ -623,7 +652,51 @@ Cait Harrigan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-categories="news,audio moth,analysis,bird song" data-listing-date-sort="1682146800000" data-listing-file-modified-sort="1707442342498" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="11" data-categories="hummingbirds,code,data analysis,deep-dive" data-listing-date-sort="1683788400000" data-listing-file-modified-sort="1752687747147" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
+<div class="thumbnail">
+<p><a href="./posts/hummer-sizes-110523/index.html"> <img src="./posts/hummer-sizes-110523/thumbnail.png" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/hummer-sizes-110523/index.html">
+<h3 class="no-anchor listing-title">
+Hummingbird sizes
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('hummingbirds'); return false;">
+hummingbirds
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
+code
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('data analysis'); return false;">
+data analysis
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('deep-dive'); return false;">
+deep-dive
+</div>
+</div>
+<a href="./posts/hummer-sizes-110523/index.html">
+<div class="listing-description">
+Reading time: 6 minutes
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/hummer-sizes-110523/index.html">
+<div class="listing-date">
+May 11, 2023
+</div>
+<div class="listing-author">
+Cait Harrigan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="12" data-categories="news,audio moth,analysis,bird song" data-listing-date-sort="1682146800000" data-listing-file-modified-sort="1752635378803" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
 <p><a href="./posts/bird-song-220423/index.html"> <img src="./posts/bird-song-220423/thumbnail.jpeg" class="thumbnail-image"> </a></p>
 </div>
@@ -667,7 +740,7 @@ Kath Quayle
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="11" data-categories="news,chit chat,hummingbirds" data-listing-date-sort="1680159600000" data-listing-file-modified-sort="1707442342809" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="13" data-categories="news,chit chat,hummingbirds" data-listing-date-sort="1680159600000" data-listing-file-modified-sort="1752635378839" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
 <p><a href="./posts/hummer-watch-300323/index.html"> <img src="./posts/hummer-watch-300323/thumbnail.png" class="thumbnail-image"> </a></p>
 </div>
@@ -708,7 +781,7 @@ Kath Quayle
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="12" data-categories="news,chit chat,hummingbirds" data-listing-date-sort="1679295600000" data-listing-file-modified-sort="1707442342809" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="14" data-categories="news,chit chat,hummingbirds" data-listing-date-sort="1679295600000" data-listing-file-modified-sort="1752635378838" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
 <p><a href="./posts/hummer-watch-200323/index.html"> <img src="./posts/hummer-watch-200323/thumbnail.png" class="thumbnail-image"> </a></p>
 </div>
@@ -749,7 +822,7 @@ Kath Quayle
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="13" data-categories="news,chit chat" data-listing-date-sort="1679036400000" data-listing-file-modified-sort="1707442343485" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="15" data-categories="news,chit chat" data-listing-date-sort="1679036400000" data-listing-file-modified-sort="1752635378853" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
 <div class="thumbnail">
 <p><a href="./posts/recap-170323/index.html"> <img src="./posts/recap-170323/thumbnail.jpg" class="thumbnail-image"> </a></p>
 </div>
@@ -787,7 +860,7 @@ Kath Quayle
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="14" data-categories="news,hardware" data-listing-date-sort="1678690800000" data-listing-file-modified-sort="1707442342942" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="16" data-categories="news,hardware" data-listing-date-sort="1678690800000" data-listing-file-modified-sort="1752635378850" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
 <div class="thumbnail">
 <p><a href="./posts/operations-update-130323/index.html"> <img src="./posts/operations-update-130323/thumbnail.jpg" class="thumbnail-image"> </a></p>
 </div>
@@ -825,7 +898,7 @@ Kath Quayle
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="15" data-categories="bees,climate,phenology,data analysis" data-listing-date-sort="1678690800000" data-listing-file-modified-sort="1707442343322" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="17" data-categories="bees,climate,phenology,data analysis" data-listing-date-sort="1678690800000" data-listing-file-modified-sort="1752635378851" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
 <div class="thumbnail">
 <p><a href="./posts/oregon-grape-seasons-130323/index.html"> <img src="./posts/oregon-grape-seasons-130323/thumbnail.jpg" class="thumbnail-image"> </a></p>
 </div>
@@ -869,7 +942,7 @@ Kath Quayle
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="16" data-categories="climate,code,data analysis" data-listing-date-sort="1677052800000" data-listing-file-modified-sort="1707442342561" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<div class="quarto-post image-right" data-index="18" data-categories="climate,code,data analysis" data-listing-date-sort="1677052800000" data-listing-file-modified-sort="1752635378805" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
 <div class="thumbnail">
 <p><a href="./posts/fires-220223/index.html"> <img src="./posts/fires-220223/thumbnail.jpg" class="thumbnail-image"> </a></p>
 </div>
@@ -910,7 +983,7 @@ Cait Harrigan, Richard Harrigan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="17" data-categories="news,frogs" data-listing-date-sort="1666422000000" data-listing-file-modified-sort="1752627304291" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="19" data-categories="news,frogs" data-listing-date-sort="1666422000000" data-listing-file-modified-sort="1752635378805" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
 <p><a href="./posts/frog-watch-221022/index.html"> <img src="./posts/frog-watch-221022/thumbnail.jpg" class="thumbnail-image"> </a></p>
 </div>
@@ -948,7 +1021,7 @@ Kath Quayle
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="18" data-categories="climate,data analysis" data-listing-date-sort="1665558000000" data-listing-file-modified-sort="1707442342858" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<div class="quarto-post image-right" data-index="20" data-categories="climate,data analysis" data-listing-date-sort="1665558000000" data-listing-file-modified-sort="1752635378845" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
 <div class="thumbnail">
 <p><a href="./posts/indoor-air-replacement-121022/index.html"> <img src="./posts/indoor-air-replacement-121022/Picture3.png" class="thumbnail-image"> </a></p>
 </div>
@@ -986,7 +1059,7 @@ Richard Harrigan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="19" data-categories="news,code,data analysis,bees" data-listing-date-sort="1659596400000" data-listing-file-modified-sort="1707442342409" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="21" data-categories="news,code,data analysis,bees" data-listing-date-sort="1659596400000" data-listing-file-modified-sort="1752635378802" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
 <div class="thumbnail">
 <p><a href="./posts/bee-watch-040822/index.html"> <img src="./posts/bee-watch-040822/images/Raspberrypi camera 2.jpg" class="thumbnail-image"> </a></p>
 </div>
@@ -1030,7 +1103,7 @@ Kath Quayle
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="20" data-categories="bees,conservation,deep-dive" data-listing-date-sort="1658214000000" data-listing-file-modified-sort="1707442342341" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<div class="quarto-post image-right" data-index="22" data-categories="bees,conservation,deep-dive" data-listing-date-sort="1658214000000" data-listing-file-modified-sort="1752635378801" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
 <div class="thumbnail">
 <p><a href="./posts/bee-loss-190722/index.html"> <img src="./posts/bee-loss-190722/thumbnail.jpg" class="thumbnail-image"> </a></p>
 </div>
@@ -1071,7 +1144,7 @@ Kath Quayle
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="21" data-categories="news" data-listing-date-sort="1651388400000" data-listing-file-modified-sort="1707442343330" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="23" data-categories="news" data-listing-date-sort="1651388400000" data-listing-file-modified-sort="1752635378853" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
 <div class="thumbnail">
 <p><a href="./posts/recap-010522/index.html"> <img src="./posts/recap-010522/thumbnail.jpg" class="thumbnail-image"> </a></p>
 </div>
@@ -1106,7 +1179,7 @@ Cait Harrigan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="22" data-categories="news,climate" data-listing-date-sort="1639900800000" data-listing-file-modified-sort="1707442343330" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="24" data-categories="news,climate" data-listing-date-sort="1639900800000" data-listing-file-modified-sort="1752635378852" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
 <p><a href="./posts/purple-air-191221/index.html"> <img src="./posts/purple-air-191221/thumbnail.jpg" class="thumbnail-image"> </a></p>
 </div>
@@ -1144,9 +1217,9 @@ Cait Harrigan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="23" data-categories="climate,pilot project,data analysis" data-listing-date-sort="1623826800000" data-listing-file-modified-sort="1707442343509" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12">
+<div class="quarto-post image-right" data-index="25" data-categories="climate,pilot project,data analysis" data-listing-date-sort="1623826800000" data-listing-file-modified-sort="1752635378855" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12">
 <div class="thumbnail">
-<p><a href="./posts/weather-story-160621/index.html"> <img src="./posts/weather-story-160621/thumbnail.jpg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/weather-story-160621/index.html"> <img data-src="./posts/weather-story-160621/thumbnail.jpg" class="thumbnail-image"> </a></p>
 </div>
 <div class="body">
 <a href="./posts/weather-story-160621/index.html">
@@ -1185,9 +1258,9 @@ Kath Quayle
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="24" data-categories="conservation,pilot project,data analysis" data-listing-date-sort="1622444400000" data-listing-file-modified-sort="1707442343200" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11">
+<div class="quarto-post image-right" data-index="26" data-categories="conservation,pilot project,data analysis" data-listing-date-sort="1622444400000" data-listing-file-modified-sort="1752635378851" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11">
 <div class="thumbnail">
-<p><a href="./posts/oregon-grape-phenology-310521/index.html"> <img src="./posts/oregon-grape-phenology-310521/thumbnail.jpg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/oregon-grape-phenology-310521/index.html"> <img data-src="./posts/oregon-grape-phenology-310521/thumbnail.jpg" class="thumbnail-image"> </a></p>
 </div>
 <div class="body">
 <a href="./posts/oregon-grape-phenology-310521/index.html">
@@ -1230,6 +1303,9 @@ Kath Quayle
 <div class="listing-no-matching d-none">
 No matching items
 </div>
+<nav id="listing-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
 </div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
