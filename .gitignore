@@ -2,7 +2,7 @@
 docs/
 .quarto/
 .Rproj.user/
-posts/template/
+posts/_template/
 /.quarto/
 .Rhistory
 _freeze/

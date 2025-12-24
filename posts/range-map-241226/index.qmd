@@ -13,12 +13,12 @@ draft: true
 
 Reading time: `r ifelse(file.size("index.qmd")/2000 <= 1.5, '<1 minute', paste0(round(file.size("index.qmd")/2000), ' minutes'))`
 
-
 ```{r}
 library(tidyverse)
 library(ggforce)
 library(leaflet)
 library(bcmaps)
+library(concaveman)
 
 # read in CSV data
 bees = read_csv('B. flavidus data.csv') %>%
@@ -33,8 +33,8 @@ bees_points = st_as_sf(bees, coords = c("longitude", "latitude")) %>%
 # calculate range with convex hull
 bee_range = bees_points %>% 
   group_by(`Since 2023`) %>% 
-  summarise() %>% 
-  st_concave_hull(ratio = 0.7)
+  #summarise() %>% st_concave_hull(ratio = 0.7)
+  summarise(geometry = concaveman(geometry, concavity = 3), .groups = "drop")
 
 # plot bee map
 ggplot() +
