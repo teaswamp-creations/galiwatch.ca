@@ -11,4 +11,4 @@ To build this site, you will need:
 * [embedr](https://github.com/mccarthy-m-g/embedr)
 * [pixture](https://github.com/royfrancis/pixture)
 * [emo](https://github.com/hadley/emo)
-* [bcdata](https://github.com/bcgov/bcdata.git), [bcmaps](https://github.com/bcgov/bcmaps.git)
+* [bcmaps](https://github.com/bcgov/bcmaps.git)
