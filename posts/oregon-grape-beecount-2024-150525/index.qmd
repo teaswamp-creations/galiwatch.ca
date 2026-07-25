@@ -19,7 +19,7 @@ Reading time: `r ifelse(file.size("index.qmd")/2000 <= 1.5, '<1 minute', paste0(
 
 ## What we learned in 2024
 
-We are continue to experiment with camera placement, and unfortunately this year was less optimal in that we were only able to identify the species of around 60% of visiting bumblebees. Nevertheless, we still have lots of data to play with.
+We continue to experiment with camera placement, and unfortunately this year was less optimal in that we were only able to identify the species of around 60% of visiting bumblebees. Nevertheless, we still have lots of data to play with.
 
 First buds opened in the Oregon grape patch camera traps on April 15th (Cam 1) 16th (Cam 2). Data collection largely went well; although similar to last year, we lost a week of weather data due to power outages on the Island.
 
@@ -28,7 +28,7 @@ What we saw in 2024:
 1.  Weather: average daily temperatures ranged from 8 to 11^o^C during April and early May
 2.  Flowering: the Oregon grape bloomed at the mid-point of the bud-break time frame we have established over the 4 years of monitoring (Apr 9th - Apr 20th), and the blooming period of 21 days was similar to previous years.
 3.  Fruit set: flowers were very productive with good fruit set
-4.  Pollinators: total number of sightings of bumblebees (699) was the highest we have seen since we started monitoring in 2021. However species diversity was lower with only two bumblebee species reliably observed in the camera traps, and very few observations of solitary bees. (n= 401):
+4.  Pollinators: total number of sightings of bumblebees (699) was the highest we have seen since we started monitoring in 2021. However species diversity was lower with only two bumblebee species reliably observed in the camera traps, and very few observations of solitary bees.
 
 -   *Bombus flavifrons* (yellow-fronted bumblebee) - 93% of bee sightings (n=373)
 
@@ -36,7 +36,7 @@ What we saw in 2024:
 
 -   Solitary bees - 1% of bee sightings (n=4)
 
-5.  Bumblebees were seen within 12-24 hours of flowers opening, and unlike previous years *B. flavifrons* predominated unlike previous years when *B. sitkensis* was the most prevalent, perhaps reflecting the proximity of nest sites.
+5.  Bumblebees were seen within 12-24 hours of flowers opening. *B. flavifrons* predominated unlike previous years when *B. sitkensis* was the most prevalent, perhaps reflecting the proximity of nest sites.
 6.  There were very few other pollinators observed (no moths, stilt bugs, or stink bugs, as seen in 2023); although, we did see a small bird, identified as an orange crowned warbler, the obscure root weevil (*Sciopithes obscurus),* and a fly.
 7.  We saw how banana slugs can impact Oregon grape blossom availability - flowering stems were cleared of blooms within an hour!!
 
@@ -90,7 +90,7 @@ So far, spring weather in the weeks prior to bloom and during blooming of Oregon
 
 -   In 2023, day-time highs hovered between 10 and 12 °C throughout April, only reaching [\>]{.underline}15 °C at the end of the month (April 28th). Cooler early spring temperatures correlated with delayed bud break (April 20), indicating daytime highs of [\>]{.underline}15 °C are not essential for bud break, which suggests other factors such as daylight hours may also be involved.
 
--   Oregon grape is typically in flower for 3 weeks, but the time to fully flowering ([\>]{.underline}50% flowering) is very variable ranging from 6 days (2024) to 20 days (2022).
+-   Oregon grape is typically in flower for 3 weeks, but the time to 50% flowering is very variable ranging from 6 days (2024) to 20 days (2022).
 
 -   Flowering is typically over by the end of the first week of May.
 
@@ -120,7 +120,7 @@ Solitary bees - accounted for 1% of sightings, down from 4% in 2023.
 
 ![](images/B.%20flavifrons.png){fig-align="center"}
 
-From 2021 to 2023, the predominant bee sightings were of *B. sitkensis* but this changed in 2024 with *B. flavifrons* taking the space. Despite this, we observed *B. sitkensis* foraging on the haskap berry patch, which begans flowering in mid-to-late March, as well as in early flowering heather, and on dandelions, which also start flowering in March.
+From 2021 to 2023, the predominant bee sightings were of *B. sitkensis* but this changed in 2024 with *B. flavifrons* taking the space. Despite this, we observed *B. sitkensis* foraging on the haskap berry patch, which began flowering in mid-to-late March, as well as in early flowering heather, and on dandelions, which also start flowering in March.
 
 Other early bee sightings included *B. melanopygus* and *B. vancouverensis*. These early bees are most likely queens emerging from hibernation, that are out foraging while looking for a nest sight.
 
