@@ -3,6 +3,7 @@ editor: visual
 title: Winter flowers
 date: 2026-04-09 
 author: Kath Quayle
+image: thumbnail.jpg
 categories:
   - news
   - phenology
@@ -645,5 +646,3 @@ This first look at early flowering trends in BC over the last 8 years shows how 
 ::: {style="text-align: center;"}
 Made with Quarto and ❤️
 :::
-
-

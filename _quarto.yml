@@ -1,7 +1,9 @@
 project:
   type: website
-  output-dir: docs_staging
-  resources: images
+  output-dir: docs
+  resources: 
+    - images
+    - CNAME
 
 website:
   title: "Operation Galiwatch"

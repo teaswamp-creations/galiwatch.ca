@@ -6,5 +6,5 @@ posts/_template/
 /.quarto/
 .Rhistory
 _freeze/
-docs_staging
 docs
+**/*.quarto_ipynb

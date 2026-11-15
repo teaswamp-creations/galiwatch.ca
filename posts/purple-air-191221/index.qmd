@@ -24,7 +24,7 @@ Reading time: `r ifelse(file.size("index.qmd")/2000 < 1, '<1 minute', paste0(rou
   <div class="column" style="flex: 50%; margin-left: 2em;">
   <div id='PurpleAirWidget_150850_module_AQI_conversion_C0_average_10_layer_standard'>Loading PurpleAir Widget...</div>
 <script src='https://www.purpleair.com/pa.widget.js?key=ML33UTO2QIAKLQS4&module=AQI&conversion=C0&average=10&layer=standard&container=PurpleAirWidget_150850_module_AQI_conversion_C0_average_10_layer_standard'></script>
-  </div
+  </div>
 </div> 
 
 
