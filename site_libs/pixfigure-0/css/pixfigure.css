@@ -1,32 +1,28 @@
 /* css styles for pixfigure */
 
+/* caption */
+
 .pixfigure {
   width: 100%;
   margin: 1em 0 1em 0;
 }
 
 .pixfigure a {
-  -webkit-transition: -webkit-filter 0.3s ease-in-out;
-  transition: -webkit-filter 0.3s ease-in-out;
-  -o-transition: filter 0.3s ease-in-out;
-  transition: filter 0.3s ease-in-out;
-  transition: filter 0.3s ease-in-out, -webkit-filter 0.3s ease-in-out;
+  transition: -webkit-filter 0.25s;
+  transition: filter 0.25s;
+  transition: filter 0.25s, -webkit-filter 0.25s;
 }
 
 .pixfigure a:hover,
 .pixfigure a:focus,
 .pixfigure a:active {
-    -webkit-filter: brightness(0.8);
-    filter: brightness(0.8);
+  -webkit-filter: brightness(0.9) contrast(0.9);
+  filter: brightness(0.9) contrast(0.9);
+  transition: -webkit-filter 0.25s;
+  transition: filter 0.25s;
+  transition: filter 0.25s, -webkit-filter 0.25s;
 }
 
 .pixfigure figcaption {
   margin-top: 0.5em;
-}
-
-/* caption */
-
-.slbCaption {
- font-size: 1em;
- white-space: normal;
 }
